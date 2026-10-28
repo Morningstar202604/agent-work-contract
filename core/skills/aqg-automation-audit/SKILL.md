@@ -1,6 +1,7 @@
 ---
 name: aqg-automation-audit
-description: Inventory automation stack (hooks / MCP / plugins / skills / env) + overlap-check vs AQG workflow + emit structured verdict in any host. Use PROACTIVELY when installing or updating a plugin / marketplace, suspecting a hook is interfering with AQG flow, seeing repeated system-reminder injections (typical noise signal), running monthly automation hygiene, OR before evidence-closeout if the automation stack changed mid-session. Advisory + read-only — it inventories and emits verdicts (keep / migrate / disable / fix); the human applies any change — this skill never modifies hooks, plugins, MCP, or skills. Defaults to current host (`~/.claude`) and supports `--skill-root` override.
+description: "Inventory the automation stack (hooks / MCP / plugins / skills / env) and check it against the AQG workflow; use when installing a plugin or a hook interferes with tasks."
+
 ---
 
 # AQG Automation Audit

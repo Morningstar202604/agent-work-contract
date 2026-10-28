@@ -22,29 +22,31 @@ function markTurnStart(cwd, payload, prompt) {
   });
 }
 
+// 每轮注入只保留「文件路径 + 未完成项数 + 台账摘要」三行；
+// 标题索引只在回顾类请求时才给，避免每轮重复占上下文。
 function build(cwd, payload, prompt) {
   const file = m.memoryPathFor(cwd);
   const body = m.readText(file);
   const state = m.readState(cwd);
 
-  const lines = ['【上下文记忆 · 定位规则】', `工作区记忆文件：${file}`];
+  const open = Array.isArray(state.openTodos) ? state.openTodos.filter(Boolean) : [];
+  const procs = Array.isArray(state.runningProcs) ? state.runningProcs : [];
+  const phase = state.projectPhase || 'active';
 
-  if (!body.trim()) {
-    lines.push('该文件尚未建立：本轮若给出计划，必须立即创建它并写入目标、约束、计划、决策与验证结论。');
-  } else {
-    const open = Array.isArray(state.openTodos) ? state.openTodos.filter(Boolean) : [];
-    const updatedAt = state.lastTodosAt ? state.lastTodosAt.slice(0, 19).replace('T', ' ') : '未知';
-    lines.push(`计划最后同步：${updatedAt}，未完成 ${open.length} 项。`);
-    if (open.length) lines.push('未完成项：' + open.slice(0, 8).map((t, i) => `${i + 1}) ${t}`).join('；'));
-  }
+  const lines = [
+    `【上下文记忆】${file}`,
+    `阶段=${phase}；未完成任务=${open.length}；台账进程=${procs.length}。`,
+  ];
+  if (open.length) lines.push(`未完成：${open.slice(0, 5).map((t, i) => `${i + 1}) ${t}`).join('；')}`);
+  if (!body.trim()) lines.push('该文件尚未建立：本轮给出计划时先创建并写入目标、约束、计划、决策与验证结论。');
 
   if (RECALL_HINT.test(prompt) && body.trim()) {
     const index = m.headingIndex(body);
-    lines.push('', '本轮属于上下文回顾类请求：先读上述记忆文件，按下列索引直接跳读要点；禁止重扫代码库、禁止复述历史对话全文。');
+    lines.push('本轮为上下文回顾：先读该文件，按下述索引跳读；禁止重扫代码库、禁止复述历史对话全文。');
     if (index.length) lines.push(...index);
   }
 
-  lines.push('', '纪律：任何事实以记忆文件为准；发现文件与现状不符，先更新文件再继续；不要把记忆写成大段代码或日志粘贴。');
+  lines.push('纪律：事实以记忆文件为准；发现不符先更新文件；不贴大段代码或日志。');
   return lines.join('\n');
 }
 

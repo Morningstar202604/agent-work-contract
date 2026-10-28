@@ -1,14 +1,6 @@
 ---
 name: skill-author
-description: >-
-  Draft a new agent skill from scratch: clarify the need in one batch of five
-  questions, name it as a searchable kebab-case action phrase, write a
-  trigger-rich description, generate the ten-section SKILL.md skeleton, and
-  design its scripts with argparse subcommands and a dry-run default. Use when
-  the user asks to author a skill / create a new skill / scaffold a skill / write
-  SKILL.md / build a skill / skill creation. Do NOT use for checking an existing
-  skill against the spec (that is skill-linter) or for finding a skill in this
-  repo (that is skill-finder).
+description: "Draft a new agent skill from scratch: clarify the need, name it, write a trigger-rich description, generate the SKILL.md skeleton and script args."
 description_zh: "从零起草新 Agent 技能：命名、写触发描述、生成 SKILL.md 十段式骨架并设计带 argparse 的脚本"
 license: Apache-2.0
 compatibility: Pure prompt-based; optional python3 for the self-check step.

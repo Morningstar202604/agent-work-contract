@@ -1,7 +1,6 @@
 ---
 name: supabase
-description: >-
-  Use when doing ANY task involving Supabase. Triggers: Supabase products (Database, Auth, Edge Functions, Realtime, Storage, Vectors, Cron, Queues); client libraries and SSR integrations (supabase-js, @supabase/ssr) in Next.js, React, SvelteKit, Astro, Remix; auth issues (login, logout, sessions, JWT, cookies, getSession, getUser, getClaims, RLS); Supabase CLI or MCP server; schema changes, migrations, declarative schemas, security audits, Postgres extensions (pg_graphql, pg_cron, pg_vector); debugging and troubleshooting errors or unexpected behavior on Supabase projects (HTTP errors, Postgres errors, RLS surprises, permission denied, schema cache issues, timeouts, Edge Function crashes, Realtime drops, Storage failures) and reading or querying logs (Logs Explorer, ClickHouse).
+description: "Handle any Supabase task: Database, Auth, Edge Functions, Storage, Realtime, RLS, vectors, cron, queues and troubleshooting."
 description_zh: "处理任何 Supabase 任务：数据库、Auth、Edge Functions、Storage、RLS 与排错"
 license: MIT
 compatibility: 需要 Supabase 项目凭据或 CLI/MCP；数据库写操作需显式确认。

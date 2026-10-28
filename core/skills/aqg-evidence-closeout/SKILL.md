@@ -1,6 +1,7 @@
 ---
 name: aqg-evidence-closeout
-description: Evidence-backed closeout for AI team project tasks in any repository path, covering fresh verification, audit adjudication, durable state, and remaining blockers. Use before saying work is complete, before final answers after code/docs/status edits, before PR/issue handoff, after tests/checks, and whenever the task touched production-adjacent preflight, audit artifacts, status docs, or handoff prompts.
+description: Evidence-backed closeout for AI team project tasks in any repository path, covering fresh verification, audit adjudication, durable state, and remaining blockers.
+
 ---
 
 # AQG Evidence Closeout

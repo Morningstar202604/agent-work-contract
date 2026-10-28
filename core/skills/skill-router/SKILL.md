@@ -1,17 +1,6 @@
 ---
 name: skill-router
-description: >-
-  Decide WHICH installed skills (if any) a task needs, in milliseconds, before
-  work starts. Indexes all SKILL.md descriptions (Chinese + English) into a
-  deterministic TF-IDF term index and scores the task against it — ranked
-  candidates, matched terms, and a USE / WEAK / NO-SKILL verdict. Use when
-  starting any professional task and unsure which skill fits, when choosing
-  between several similar skills, when the skill-first rule says "check for a
-  matching skill", or when the user asks 技能路由 / 用哪个技能 / 判断要不要用技能 /
-  which skill should I use / route this task to skills. Do NOT use for writing
-  new skills (use skill-author), auditing skill quality (use skill-linter), or
-  as an embedding/vector service — it is lexical matching, deterministic and
-  offline.
+description: "Decide which installed skills a task needs before work starts: offline TF-IDF index over SKILL.md descriptions, ranked candidates and a USE/WEAK/NO verdict."
 description_zh: "任务一开始就判断：该用哪些已安装技能、各打几分、要不要用。确定性离线词法匹配，毫秒级出结果。"
 license: Apache-2.0
 compatibility: "Python 3.8+ stdlib only; offline; auto-detects the skills directory (repo layout or ~/.zcode, ~/.workbuddy, ~/.claude, ~/.config/opencode)."

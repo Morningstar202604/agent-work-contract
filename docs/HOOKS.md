@@ -29,7 +29,7 @@
 
 - 13 条危险命令规则（`lib/danger-rules.js`）：`git reset --hard`、`git clean -f`、`rm -rf`、`DROP TABLE`、无 WHERE 的 UPDATE/DELETE、`mkfs`/`dd`、`npm publish`、生产部署、迁移重置、按名杀进程、历史改写等 → 提示 + 给出可回滚做法。
 - 密钥类 git 操作（`git add -A`、`git add .env`、`--no-verify`）→ 提示。
-- 长驻服务启动（dev server / `docker run` / `uvicorn` 等）→ 登记到 `runningProcs`，提示收尾必须关闭；构建/测试类一次性命令不登记。
+- 长驻服务启动（dev server / `docker run` / `uvicorn` 等）→ 登记到台账 `runningProcs`；构建/测试类一次性命令不登记。清理时机是项目收尾，不是每轮。
 - 永远只注入 `additionalContext`，不返回 `permissionDecision`，因此不会弹权限确认。
 
 ### plan-sync.js（PostToolUse · TodoWrite）
@@ -42,19 +42,39 @@
 
 ### stop-guard.js（Stop）
 
-收尾前检查四项：未关闭的 `runningProcs`、`openTodos`、`needsVerify`、记忆未落盘。命中任一项返回 `decision: block`，最多阻断 3 轮；用户喊停或达到上限时只提示不阻断，然后串联 `cleanup-check`。
+按项目阶段分支：
+
+- `active`（默认）：只检查 `needsVerify`（改了代码没验证）与记忆未落盘；未完成任务与运行中进程属于正常进行中，**不阻断**，也不触发清理检查。
+- `closing`：额外强制 `runningProcs` 清零与 `openTodos` 清零，然后串联 `cleanup-check`。
+
+命中任一条件返回 `decision: block`，最多阻断 3 轮；用户喊停或达到上限时只提示不阻断。
 
 `persistentProcs`（`state.json` 里的正则数组）可声明"常驻不关"的进程，命中即从存活清单剔除。
 
-### cleanup-check.js（被 stop-guard 调用，也可独立运行）
+### ledger.js（手动 CLI，非事件钩子）
 
-扫描工作区（深度 3、上限 3000 文件）找临时文件（`.tmp/.bak/.orig/.rej/*~/.swp/.log` 等）、本轮报告文件、被改动文档、改动文件清单；`git ls-files` 能识别为已跟踪的文件不算临时；每轮只阻断一次。
+台账的唯一读写入口：
+
+```bash
+node hooks/ledger.js status
+node hooks/ledger.js phase active|closing|done
+node hooks/ledger.js add-proc --cmd "pnpm dev" --pid 1234 --port 5173
+node hooks/ledger.js rm-proc --pid 1234 | --port 5173 | --all
+node hooks/ledger.js add-file --path src/app.tsx
+node hooks/ledger.js artifact --note "dist/"
+```
+
+除 `status` 外每次变更都会同步渲染记忆文件的 `<!-- ledger:start --> ... <!-- ledger:end -->` 区块。状态字段：`projectPhase`、`runningProcs`、`changedFiles`、`artifacts`。
+
+### cleanup-check.js（被 stop-guard 在 closing 阶段调用，也可独立运行）
+
+扫描工作区（深度 3、上限 3000 文件）找临时文件（`.tmp/.bak/.orig/.rej/*~/.swp/.log` 等）、本轮报告文件、被改动文档、改动文件清单；`git ls-files` 能识别为已跟踪的文件不算临时；每次收尾只阻断一次。
 
 ## 自检
 
 ```bash
 npm run selftest
-# ALL 50 CASES PASS
+# ALL 52 CASES PASS
 ```
 
 自检在 `<仓库>/.tmp/selftest/` 建临时工作区，通过 `ZCODE_MEMORY_DIR` 把记忆重定向到临时目录，不碰真实状态。可用 `AGENT_RULES_TEST_TMP` 改位置。

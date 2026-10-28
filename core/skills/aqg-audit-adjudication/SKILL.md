@@ -1,6 +1,7 @@
 ---
 name: aqg-audit-adjudication
-description: Decide accept / reject / needs-user-decision for each Claude Opus, Gemini 3.1, o3, Codex internal-review, or local-audit finding and produce a structured adjudication table for AI team project work. Use AFTER any audit / review / second-opinion returns with a list of issues to integrate before fixing code, especially for production-adjacent scripts, ADRs, decision packets, CI failures, or evidence artifacts.
+description: Decide accept / reject / needs-user-decision for each Claude Opus, Gemini 3.1, o3, Codex internal-review, or local-audit finding and produce a structured adjudication table for AI team project work.
+
 ---
 
 # AQG Audit Adjudication

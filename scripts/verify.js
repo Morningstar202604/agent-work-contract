@@ -33,9 +33,9 @@ const skills = fs.readdirSync(path.join(REPO, 'core', 'skills')).filter((d) =>
   fs.existsSync(path.join(REPO, 'core', 'skills', d, 'SKILL.md'))
 );
 
-check('技能数量 = 71', () => {
-  if (skills.length !== 71) throw new Error('实际 ' + skills.length);
-  return '71';
+check('技能数量 = 82', () => {
+  if (skills.length !== 82) throw new Error('实际 ' + skills.length);
+  return '82';
 });
 
 check('每个技能都有 SKILL.md 与 name 字段', () => {
@@ -60,21 +60,22 @@ check('命令 4 个', () => {
   return '4';
 });
 
-check('钩子 8 个 + lib 6 个（5 模块 + Claude 适配器）', () => {
+check('钩子 8 个 + ledger CLI + lib 7 个', () => {
   const hooks = fs.readdirSync(path.join(REPO, 'core', 'hooks')).filter((f) => f.endsWith('.js') && f !== 'selftest.js');
   const lib = fs.readdirSync(path.join(REPO, 'core', 'hooks', 'lib')).filter((f) => f.endsWith('.js'));
-  if (hooks.length !== 8) throw new Error('钩子 ' + hooks.length);
-  if (lib.length !== 6) throw new Error('lib ' + lib.length);
-  return '8 + 6';
+  if (hooks.length !== 9) throw new Error('钩子 ' + hooks.length);
+  if (lib.length !== 7) throw new Error('lib ' + lib.length);
+  if (!hooks.includes('ledger.js')) throw new Error('缺 ledger.js');
+  return '8 + ledger + 7';
 });
 
-check('钩子自检 50/50', () => {
+check('钩子自检 52/52', () => {
   const out = execFileSync(process.execPath, [path.join(REPO, 'core', 'hooks', 'selftest.js')], {
     encoding: 'utf8',
     cwd: REPO,
   });
-  if (!/ALL 50 CASES PASS/.test(out)) throw new Error(out.split('\n').slice(-3).join(' '));
-  return 'ALL 50 CASES PASS';
+  if (!/ALL 52 CASES PASS/.test(out)) throw new Error(out.split('\n').slice(-3).join(' '));
+  return 'ALL 52 CASES PASS';
 });
 
 const SECRET_PATTERNS = [

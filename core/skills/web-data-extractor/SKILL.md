@@ -1,13 +1,6 @@
 ---
 name: web-data-extractor
-description: >-
-  Extract structured data from websites with a polite, dry-run-first requests +
-  BeautifulSoup scraper: CSS-selector field mapping, automatic pagination,
-  CSV/JSON output, and built-in rate limiting. Use when the user asks to web
-  scraping / data extraction / crawl a website / extract a table / scrape a
-  listing / paginate results / pull prices off a page. Do NOT use for
-  JavaScript-heavy SPAs (needs a real browser), bypassing login walls, CAPTCHA
-  solving, or large-scale distributed crawling.
+description: "Extract structured data from websites with requests + BeautifulSoup: CSS-selector field mapping, pagination, CSV/JSON output and rate limiting."
 description_zh: "用 requests 与 BeautifulSoup 抓取网页数据：CSS 选择器、自动翻页、导出 CSV/JSON"
 license: Apache-2.0
 compatibility: "Python 3.8+; requires requests and beautifulsoup4 (pip install requests beautifulsoup4). CSV/JSON output uses stdlib. Needs network access to the target site; respects a configurable delay between pages."

@@ -1,6 +1,7 @@
 ---
 name: observability-designer
-description: "可观测性体系设计指南。当需要为服务规划 metrics/logs/traces、定义 RED/USE 指标、设计仪表盘与告警、接入 OpenTelemetry、做健康检查与关键路径埋点时，由 fullstack-devops-engineer 加载执行。触发场景：design a dashboard / too many alerts / alert fatigue / golden signals / grafana dashboard / reduce alert noise / monitoring for a new service / observability strategy / alerting review；中文触发词：设计监控告警 / 可观测性方案 / 仪表盘 / 降低告警噪音。Do NOT use for 安装或运维可观测性 agent，也不用于 SLO/错误预算设计（交给 slo-architect）。"
+description: "设计可观测性体系：metrics/logs/traces、RED/USE 指标、仪表盘与告警、OpenTelemetry 接入、健康检查与关键路径埋点。触发：dashboard / alert fatigue / golden signals / 监控告警。"
+
 license: Apache-2.0
 compatibility: Stdlib-only Python scripts. No API keys required.
 metadata:

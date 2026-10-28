@@ -1,14 +1,6 @@
 ---
 name: design-brief-interpreter
-description: >-
-  Interpret a vague visual design request into a machine-checkable design spec:
-  purpose, audience, platform + exact canvas size/ratio, composition, style
-  anchor, color palette, text hierarchy, and text budget. This is the entry skill
-  of the visual-design-studio chain — its output feeds image-prompt-engineer
-  directly, and layout-spec-auditor verifies the final image against it. Use
-  when the user asks to make an image / design a cover / poster / infographic /
-  illustration / cover / banner. Do NOT use for video frame prompts
-  (shot-designer owns motion), nor for UI code generation.
+description: "Turn a vague visual design request into a checkable spec: purpose, audience, canvas size, composition, palette, type hierarchy and text budget."
 description_zh: "把模糊的视觉设计需求转成可校验规格：画布尺寸、构图、配色与文字层级。"
 license: Apache-2.0
 compatibility: Pure prompt-based; no runtime dependencies.

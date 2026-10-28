@@ -1,6 +1,7 @@
 ---
 name: aqg-code-construction
-description: Invoke this before writing, modifying, refactoring, or implementing code in any repository — the entry point for a coding task, not a review after one. Runs the 6-step code construction workflow (Pattern Mining, Behavior Lock, Thin Slice, Construction Rules, Local Verification, Self Review) with anti-pattern blockers, reviewer-objection prediction, and an evidence ledger; Behavior Lock is a RED/GREEN/REFACTOR TDD cycle, and the audit-before-commit gate sits at the end.
+description: Invoke this before writing, modifying, refactoring, or implementing code in any repository — the entry point for a coding task, not a review after one.
+
 ---
 
 # AQG Code Construction

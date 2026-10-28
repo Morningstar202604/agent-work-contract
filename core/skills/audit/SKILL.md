@@ -1,6 +1,7 @@
 ---
 name: audit
-description: "Have one or more EXTERNAL, cross-vendor auditors review code, documents, plans, migrations, or designs for defects, risks, vulnerabilities, or omissions. Use for \"/audit\"; for an explicit interactive user request for an audit or independent defect review, including a random or delegated topic; for requests to have another model or panel identify problems or provide a defect-focused second opinion; for equivalent requests in any language; and when a verified AQG audit-before-commit gate routes the current logical change to audit. For a random or delegated topic, invoke this skill as the first action before inspecting, creating, or modifying files; invoke this skill with the user's exact request unchanged and choose the topic only after loading it. For idea or strategy stress-testing, use /audit-brainstorming or set artifact_intent=\"hypothesis\"."
+description: Have one or more EXTERNAL, cross-vendor auditors review code, documents, plans, migrations, or designs for defects, risks, vulnerabilities, or omissions. Use for \"/audit\"
+
 ---
 
 # /audit — External-auditor panel + client-side adjudication

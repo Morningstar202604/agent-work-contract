@@ -1,5 +1,33 @@
 # Changelog
 
+## 1.1.0 — 2026-10-29
+
+### 新增
+
+- **10 个工程管理技能**：`project-lifecycle`（全周期与阶段门禁）、`task-slicing`（WBS/切片/DoD）、`requirement-framing`（动手前五问）、`cache-economy`（缓存与上下文成本）、`process-and-artifact-ledger`（台账制）、`repo-cartography`（陌生仓库测绘）、`repo-hygiene`（分支/提交/依赖治理）、`incremental-refactor`（小步重构）、`decision-log`（轻量 ADR）、`delivery-quality-bar`（交付质量基线）、`toolchain-playbook`（本机工具链速查）。
+- **`hooks/ledger.js` 台账 CLI**：`status` / `phase active|closing|done` / `add-proc` / `rm-proc` / `add-file` / `artifact`，状态同步渲染到记忆文件的「资源台账」区块。
+- **项目阶段模型**：`active` 阶段允许保留进程与中间产物；只有 `closing` 才强制清零并触发清理检查。
+- **运行时配置下发**：安装器写入 `skills.metadataBudget=60000`、`toolConcurrency.maxConcurrency=16`、`features` 全开、`hooks.maxOutputBytes=65536`、`hooks.timeoutMs=30000`。
+
+### 修改
+
+- `AGENTS.md`：新增「十一之二 切片式交付」「十一之三 缓存与成本经济」；把「每轮收尾」改为「按项目阶段收尾」；「进程与资源生命周期」改为「进程与资源台账（登记实时，清理统一）」。
+- `hooks/stop-guard.js`：按 `projectPhase` 分支。`active` 只拦未验证改动与记忆未落盘；`closing` 才拦未关进程与未完成待办，并串联 `cleanup-check`。
+- `hooks/guard-bash.js`：长驻服务提示改为「已登记台账，项目收尾统一关闭」，并写 `procNudged=false`。
+- `hooks/lib/polish.js`：每轮注入 4000→600 字符，只留规则摘要与原请求截断。
+- `hooks/lib/recall.js`：常驻注入压缩为「路径 + 阶段 + 未完成数 + 台账进程数」，标题索引只在回顾类请求时给。
+- `install.js`：`installRules()` 保留 `## 十七、本机环境与个人约定` 段落；`readJson()` 剥离 UTF-8 BOM；`copyTree()` 支持跳过与插件同名的技能。
+- 82 个技能的 `description` 全部压到 250 字符以内（ZCode 单条硬截断阈值），累计描述元数据从 25k 降到 12k 字符。
+- 默认跳过 `docx` / `pdf` / `pptx` / `xlsx` / `skill-creator` / `visualize` / `plugin-creator`：官方插件版功能更全，用户级同名技能会遮蔽它们。
+- `core/hooks/selftest.js`：52 例（新增 active/closing 阶段分支与台账提示用例）。
+- `README.md` / `docs/HOOKS.md` / `docs/SKILLS.md` 同步更新。
+
+### 修复
+
+- 220 个子代理缺少 `name` frontmatter，ZCode 会静默丢弃全部；已按文件名补齐。
+- 39 个只读子代理的 `tools: {write:false,edit:false}` 映射写法被 ZCode 忽略，改为 `disallowedTools: Write, Edit`。
+- `~/.zcode/cli/config.json` 带 BOM 导致安装器 `JSON.parse` 失败、钩子静默未注册。
+
 ## 1.0.0 — 2026-10-28
 
 首个可复用版本，从本机 `~/.zcode` 规则体系整理而来。

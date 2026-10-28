@@ -40,7 +40,20 @@ const HOOK_SCRIPTS = [
   'track-verify.js',
   'stop-guard.js',
   'cleanup-check.js',
+  'ledger.js',
 ];
+
+// 官方插件已提供同名技能时跳过，避免用户级技能遮蔽功能更全的插件版。
+// ZCode 的技能按路径识别、同名取用户级优先，所以重复安装只会降低质量。
+const SKIP_SKILL_NAMES = new Set([
+  'docx',
+  'pdf',
+  'pptx',
+  'xlsx',
+  'skill-creator',
+  'visualize',
+  'plugin-creator',
+]);
 
 const args = process.argv.slice(2);
 const opt = {
@@ -121,16 +134,17 @@ function installRules(src, dest, manifest) {
   return 'merged';
 }
 
-function copyTree(srcDir, destDir, manifest) {
+function copyTree(srcDir, destDir, manifest, skipNames) {
   let created = 0;
   let updated = 0;
   let same = 0;
-  const walk = (src, dest) => {
+  const walk = (src, dest, depth) => {
     for (const e of fs.readdirSync(src, { withFileTypes: true })) {
       if (e.name === '__pycache__' || e.name === '.pytest_cache' || e.name === 'node_modules') continue;
+      if (depth === 0 && skipNames && skipNames.has(e.name)) continue;
       const s = path.join(src, e.name);
       const d = path.join(dest, e.name);
-      if (e.isDirectory()) walk(s, d);
+      if (e.isDirectory()) walk(s, d, depth + 1);
       else if (e.isFile()) {
         const r = copyFile(s, d, manifest);
         if (r === 'created') created += 1;
@@ -139,7 +153,7 @@ function copyTree(srcDir, destDir, manifest) {
       }
     }
   };
-  walk(srcDir, destDir);
+  walk(srcDir, destDir, 0);
   return { created, updated, same };
 }
 
@@ -248,9 +262,25 @@ function mergeZcodeConfig(home, manifest) {
     const existing = Array.isArray(events[event]) ? events[event].filter((e) => !ownZcodeHook(e, hooksDir)) : [];
     events[event] = [...existing, ...entries];
   }
-  cfg.hooks = { ...(cfg.hooks || {}), enabled: true, events };
+  cfg.hooks = { ...(cfg.hooks || {}), enabled: true, maxOutputBytes: 65536, timeoutMs: 30000, events };
+
+  // 技能清单预算是软上限：超出后 ZCode 会把所有技能降级成「名字 + 路径」，
+  // 触发词全部丢失，技能等于不可用。默认值 20000 撑不住 104 个技能。
+  const currentBudget = cfg.skills && Number(cfg.skills.metadataBudget);
+  cfg.skills = {
+    ...(cfg.skills || {}),
+    enabled: true,
+    includeInstructions: true,
+    metadataBudget: Number.isFinite(currentBudget) && currentBudget >= 60000 ? currentBudget : 60000,
+    roots: Array.isArray(cfg.skills && cfg.skills.roots) ? cfg.skills.roots : [],
+  };
+  cfg.toolConcurrency = { ...(cfg.toolConcurrency || {}), maxConcurrency: Math.max(Number(cfg.toolConcurrency && cfg.toolConcurrency.maxConcurrency) || 0, 16) };
+  cfg.features = { compact: true, rewind: true, subagent: true, memory: true, skill: true, mcp: true, ...(cfg.features || {}) };
+  cfg.memory = { use: true, ...(cfg.memory || {}) };
+
   writeJson(cfgPath, cfg, manifest);
   log('  + 钩子已注册到 cli/config.json（' + Object.keys(ours).join(', ') + '）');
+  log('  + 运行时配置：技能预算 60000 字符 / 并发 16 / features 全开 / 钩子输出 64KB');
 }
 
 function claudeHookEvents(hooksDir) {
@@ -412,7 +442,7 @@ function installProfile(name) {
   const st = installRules(path.join(REPO, 'AGENTS.md'), rulesDest, manifest);
   log('  ' + sym(st) + ' 规则 ' + profile.rules + (st === 'merged' ? '（已保留本机个人段落）' : ''));
 
-  const skillStats = copyTree(path.join(CORE, 'skills'), path.join(home, profile.skills), manifest);
+  const skillStats = copyTree(path.join(CORE, 'skills'), path.join(home, profile.skills), manifest, SKIP_SKILL_NAMES);
   log('  ' + sym('updated') + ' 技能 → ' + profile.skills + '/（新增 ' + skillStats.created + '，更新 ' + skillStats.updated + '，未变 ' + skillStats.same + '）');
 
   const agentStats = copyTree(path.join(CORE, 'agents'), path.join(home, profile.agents), manifest);

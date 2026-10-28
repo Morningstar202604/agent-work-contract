@@ -1,10 +1,6 @@
 ---
 name: ticket-triage
-description: >-
-  Triage and prioritize a support ticket or customer issue. Use when a new ticket comes in and
-  needs categorization, assigning P1-P4 priority, deciding which team should handle it, or
-  checking whether it's a duplicate or known issue before routing. Do NOT use for drafting the
-  customer reply (use draft-response) or writing help-center content (use kb-article).
+description: "Triage a support ticket: categorize, assign P1-P4 priority, route to the owning team, and detect duplicates or known issues."
 description_zh: "对客服工单进行分类与优先级排序：判定 P1-P4、指派处理团队，并识别重复或已知问题"
 license: Apache-2.0
 compatibility: 任意兼容 Agent Skills 的工具可用；部分技能假设已连接企业系统（CRM/HRIS/文档库），未连接时按文内提示降级。

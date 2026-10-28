@@ -1,13 +1,6 @@
 ---
 name: skill-finder
-description: >-
-  Search this repository's skills by keyword, work out which scene pack a set of
-  skills belongs to (or suggest an ad-hoc combo with ordering), and print
-  repo-wide statistics — all read from the real manifest.json and SKILL.md
-  files, never a hardcoded list. Use when the user asks to find a skill / search
-  skills / which skill does X / list repo stats / skill lookup / skill discovery.
-  Do NOT use for lint compliance (that is skill-linter) or for writing a new
-  skill (skill-author).
+description: "Search this repo-s skills by keyword, recommend scene packs or ad-hoc combos, and print statistics from the real manifest and SKILL.md files."
 description_zh: "按关键词检索本仓库技能、推荐场景组合并输出统计，读取真实 manifest.json 与 SKILL.md"
 license: Apache-2.0
 compatibility: Requires python3 (stdlib only); run from the repository root.

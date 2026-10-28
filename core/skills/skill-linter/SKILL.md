@@ -1,14 +1,6 @@
 ---
 name: skill-linter
-description: >-
-  Check a single SKILL.md or a whole skills directory against the awesome-skillkit
-  spec and print a PASS/WARN/FAIL report with an explicit fix line per problem:
-  frontmatter blocks, name/directory sync, description routing, the ten-section
-  skeleton, line count, CJK body ratio, reference existence, and failure-table
-  depth. Use when the user asks to lint a skill / validate skill spec / check if
-  my skill is compliant / skill validation / skill compliance check. Do NOT use
-  for creating a new skill (that is skill-author) or for grading documentation
-  quality beyond spec compliance.
+description: "Lint a SKILL.md or skills directory against the spec: frontmatter, name sync, description routing, section skeleton, line count, CJK ratio and references."
 description_zh: "按 awesome-skillkit 规范校验 SKILL.md，输出 PASS/WARN/FAIL 报告与修复建议"
 license: Apache-2.0
 compatibility: Requires python3 (stdlib only); run from the repository root.

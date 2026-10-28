@@ -1,6 +1,7 @@
 ---
 name: aqg-systematic-debugging
-description: Root-cause debugging workflow for AI team project failures in any repository path, including failing checks, CI errors, test failures, production/read-only preflight failures, health probe failures, status drift, calibration mismatch, audit-tool anomalies, or repeated/surprising evidence conflicts. Use before proposing or applying a fix when symptoms, logs, checks, or model/audit outputs disagree. Does not replace the host built-in /debug slash command.
+description: "Root-cause debugging for project failures: failing checks, CI errors, test failures, preflight or health-probe failures, status drift, tool anomalies. Reproduce before fixing."
+
 ---
 
 # AQG Systematic Debugging

@@ -75,10 +75,10 @@ async function runGuard(payload) {
 
   if (state.skipGuard) {
     if (Number(state.stopRounds || 0)) m.writeState(cwd, { ...state, stopRounds: 0 });
-    if (!liveProcs.length) return null;
+    if (!liveProcs.length || state.projectPhase !== 'closing') return null;
     const body = [
       '【收尾提醒 · 用户已喊停，本次不阻断】',
-      `本轮启动的进程还没关闭（${liveProcs.length} 个）：`,
+      `仍有 ${liveProcs.length} 个本轮启动的进程在跑：`,
       ...liveProcs.slice(0, 8).map((p) => `  · ${typeof p === 'string' ? p : p.command || p.pid || JSON.stringify(p)}`),
       '请在离开前手动关闭这些进程（只关自己启动的，不要动别人的进程）。',
     ].join('\n');
@@ -88,10 +88,10 @@ async function runGuard(payload) {
   const rounds = Number(state.stopRounds || 0);
   if (rounds >= MAX_ROUNDS) {
     m.writeState(cwd, { ...state, stopRounds: 0 });
-    if (!liveProcs.length) return null;
+    if (!liveProcs.length || state.projectPhase !== 'closing') return null;
     const body = [
       '【收尾提醒 · 已达到阻断轮次上限，本次不阻断】',
-      `本轮启动的进程还没关闭（${liveProcs.length} 个）：`,
+      `仍有 ${liveProcs.length} 个本轮启动的进程在跑：`,
       ...liveProcs.slice(0, 8).map((p) => `  · ${typeof p === 'string' ? p : p.command || p.pid || JSON.stringify(p)}`),
       '请在离开前手动关闭这些进程。',
     ].join('\n');
@@ -109,18 +109,24 @@ async function runGuard(payload) {
   const memoryStale = !!dirtyAt && mtimeMs < dirtyAt && !state.memNudge;
   const openTodos = Array.isArray(state.openTodos) ? state.openTodos.filter(Boolean) : [];
   const needsVerify = state.needsVerify === true && state.lastVerifyOk !== true;
+  const phase = state.projectPhase || 'active';
+  const closing = phase === 'closing';
 
+  // 项目级收尾之前，未完成任务与未关进程都是「进行中」而不是「收尾缺陷」：
+  // 每轮都要求清零会让多轮开发无法保留现场、反复重启服务。
+  // 因此 active 阶段只拦「改了代码没验证」和「改动没落盘」；
+  // 进程与未完成任务只在 closing / done 阶段强制清零。
   const reasons = [];
-  if (liveProcs.length) {
+  if (closing && liveProcs.length) {
     reasons.push(
-      `本轮启动的进程还没关闭（${liveProcs.length} 个）：`,
+      `项目已进入收尾，但仍有 ${liveProcs.length} 个本轮启动的进程在跑：`,
       ...liveProcs.slice(0, 8).map((p) => `  · ${typeof p === 'string' ? p : p.command || p.pid || JSON.stringify(p)}`),
-      '收尾前按记录逆序停止这些进程并确认端口已释放；只关自己启动的，不要动别人的进程。'
+      '按台账逆序停止这些进程并确认端口已释放；只关自己启动的，不要动别人的进程。'
     );
   }
-  if (openTodos.length) {
+  if (closing && openTodos.length) {
     reasons.push(
-      `计划里还有 ${openTodos.length} 项未完成，不允许在此停止：`,
+      `项目已进入收尾，但计划里还有 ${openTodos.length} 项未完成：`,
       ...openTodos.map((t, i) => `  ${i + 1}. ${t}`),
       '直接继续做完，不要只描述下一步，也不要把剩余项推给用户。'
     );
@@ -136,13 +142,16 @@ async function runGuard(payload) {
   if (memoryStale) {
     reasons.push(
       `本轮已有改动尚未落盘。把关键事实、决策与依据、已验证结论（命令与文件行号）、新发现的坑写入 ${file}，`,
-      '并更新「当前计划」区块与「待办与阻塞」。只写摘要要点，不要贴大段代码或日志。'
+      '并更新「当前计划」区块、「资源台账」与「待办与阻塞」。只写摘要要点，不要贴大段代码或日志。'
     );
   }
 
   if (!reasons.length) {
     if (rounds) m.writeState(cwd, { ...state, stopRounds: 0 });
-    return null;
+    // 未进入收尾阶段时不串联 cleanup-check：中途清理会破坏现场并拖慢每一轮。
+    if (!closing) return null;
+    const cleanup = await cleanupCheck.runCached(payload, state);
+    return cleanup || null;
   }
 
   m.writeState(cwd, {
@@ -158,14 +167,7 @@ async function runGuard(payload) {
 async function main() {
   const payload = m.parsePayload(await m.readStdin());
   const guard = await runGuard(payload);
-  if (guard) {
-    m.emit(guard);
-    return;
-  }
-  const cwd = payload.cwd || process.cwd();
-  const state = m.readState(cwd);
-  const cleanup = await cleanupCheck.runCached(payload, state);
-  if (cleanup) m.emit(cleanup);
+  if (guard) m.emit(guard);
 }
 
 if (require.main === module) main();

@@ -53,11 +53,11 @@ async function main() {
     const port = portHint(cmd);
     blocks.push(
       [
-        '· 长驻服务启动：收尾前必须关闭本轮启动的进程',
+        '· 长驻服务启动：已登记到台账，项目收尾时统一关闭',
         port
           ? `  启动前先确认端口 ${port} 未被占用；被占用就换端口，不要结束占用它的进程。`
           : '  启动前先确认目标端口未被占用；被占用就换端口，不要结束占用它的进程。',
-        '  记录 PID / 端口 / 工作目录到记忆文件「本轮运行中进程」；收尾时只关自己启动的进程。',
+        '  拿到真实 PID 后执行 ledger.js add-proc --cmd "<命令>" --pid <PID> --port <端口> 补全台账；项目收尾（phase closing）时只关自己启动的进程。',
       ].join('\n')
     );
 
@@ -65,7 +65,7 @@ async function main() {
     const state = m.readState(cwd);
     const entry = { command: cmd.slice(0, 160), port: port ? Number(port) : null, startedAt: new Date().toISOString() };
     const list = Array.isArray(state.runningProcs) ? state.runningProcs : [];
-    m.writeState(cwd, { ...state, runningProcs: [...list, entry].slice(-20) });
+    m.writeState(cwd, { ...state, runningProcs: [...list, entry].slice(-40), procNudged: false });
   }
 
   if (FOREIGN_KILL_RE.test(cmd)) {

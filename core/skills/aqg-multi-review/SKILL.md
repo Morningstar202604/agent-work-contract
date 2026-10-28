@@ -1,6 +1,7 @@
 ---
 name: aqg-multi-review
-description: Use PROACTIVELY for a non-trivial change — a multi-file feature or larger — that needs balanced coverage across all five review dimensions, not a security pass alone; also use it to validate a filled dimension ledger. 5-dimension code review router (logic / edge_cases / security / performance / concurrency) — a cross-LLM panel where each dimension is judged by independent LLMs, not a single vendor's PR review. Two modes — `new` returns dimension-specific focus prompts plus a closeout-importable YAML skeleton; `validate` parses a filled ledger and emits `needs_llm_judgement` for cross-dimension conflicts, unfilled declared dimensions, or 3+ dimensions with findings plus an accept decision when at least one finding is non-LOW or an audit_id is missing. For test quality specifically, see aqg-test-quality-review. The skill does not call audit-mcp; the caller runs `/audit focus=<dim>` per dimension at the depth `docs/policies/audit-trigger.md` selects. Does not replace the host built-in /review slash command.
+description: Use PROACTIVELY for a non-trivial change — a multi-file feature or larger — that needs balanced coverage across all five review dimensions, not a security pass alone; also use it to validate a filled dimension ledger.
+
 ---
 
 # AQG Multi-Dimension Review

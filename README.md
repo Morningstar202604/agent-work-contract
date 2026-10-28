@@ -28,11 +28,11 @@ node install.js --tool claude         # 或只装某一个
 ## 装了什么
 
 ```
-AGENTS.md              全局工作规范（16 节：输出纪律 / 自主执行 / 诚实 / 安全 / 记忆 / 收尾 / 进程 / 边界 / 工具优先级 / 移植）
-core/skills/           71 个技能（工作契约、AQG 审计、代码审查、调试、架构、前后端、数据、安全、技能路由等）
+AGENTS.md              全局工作规范（17 节：输出纪律 / 自主执行 / 诚实 / 安全 / 记忆 / 切片交付 / 缓存经济 / 项目级收尾 / 进程台账 / 边界 / 工具优先级 / 移植）
+core/skills/           82 个技能（工作契约、AQG 审计、代码审查、调试、架构、前后端、数据、安全、工程管理、技能路由等）
 core/agents/           220 个子代理角色（软件/数据/内容/学术/电商/设计/视频/翻译等战队）
 core/commands/         4 个斜杠命令（review / arch-review / security-scan / test-gap）
-core/hooks/            8 个运行时钩子 + 5 个共用模块 + Claude Code 输出适配器
+core/hooks/            8 个运行时钩子 + ledger 台账 CLI + 6 个共用模块 + Claude Code 输出适配器
 install.js             跨工具安装器
 templates/             凭据库、记忆文件的最小模板（不含任何真实凭据）
 docs/                  移植说明、钩子协议、凭据接入、技能清单、一键复用提示词
@@ -44,15 +44,41 @@ THIRD_PARTY_NOTICES.md 上游技能与子代理的许可声明
 | 钩子 | 触发 | 行为 |
 |---|---|---|
 | `session-start` | 会话开始 | 注入工作区记忆文件路径与标题索引 |
-| `user-prompt` | 每轮输入 | 注入"提示词润色"规则 + 记忆定位；识别"停"类短语放行门禁 |
+| `user-prompt` | 每轮输入 | 注入简短的「提示词润色」提醒 + 记忆定位；识别"停"类短语放行门禁 |
 | `guard-write` | 写文件前 | 敏感文件（.env / 密钥 / 凭据）提示；工作区外写入提示；登记改动待验证 |
-| `guard-bash` | 执行命令前 | 13 条危险命令（rm -rf、DROP、force push 之外的不可逆操作等）提示；密钥类 git 操作提示；长驻服务登记 |
+| `guard-bash` | 执行命令前 | 13 条危险命令（rm -rf、DROP、force push 之外的不可逆操作等）提示；密钥类 git 操作提示；长驻服务登记到台账 |
 | `plan-sync` | TodoWrite 后 | 把计划写进记忆文件的「当前计划」区块 |
 | `track-verify` | Bash 执行后 | 识别测试/lint/类型检查命令并记录结果，通过才解除验证门禁 |
-| `stop-guard` | 准备收尾 | 未关进程 / 未完成待办 / 未验证改动 / 记忆未落盘 → 阻断（最多 3 轮） |
-| `cleanup-check` | 收尾串联 | 临时文件、待同步文档、本轮改动清单，阻断一次 |
+| `stop-guard` | 准备收尾 | `active` 阶段只拦「未验证改动 / 记忆未落盘」；`closing` 阶段额外拦未关进程与未完成待办（最多 3 轮） |
+| `cleanup-check` | 项目收尾串联 | 只在 `phase closing` 时检查临时文件、待同步文档、本轮改动清单，阻断一次 |
+| `ledger` | 手动 CLI | 台账查询与变更：`status` / `phase` / `add-proc` / `rm-proc` / `add-file` / `artifact` |
 
 所有钩子只注入提示或阻断收尾，**不修改用户命令、不弹权限窗、不杀进程**。详见 `docs/HOOKS.md`。
+
+## 项目阶段与台账
+
+进程与中间产物不再「每轮清」：登记实时发生，清理统一在项目收尾。
+
+```bash
+node <规则目录>/hooks/ledger.js status                          # 阶段 / 未完成任务 / 进程 / 改动文件 / 交付物
+node <规则目录>/hooks/ledger.js add-proc --cmd "pnpm dev" --pid 1234 --port 5173
+node <规则目录>/hooks/ledger.js phase closing                   # 进入收尾，此时才强制清进程与待办
+node <规则目录>/hooks/ledger.js phase done
+```
+
+`status` 会把台账渲染进记忆文件的「资源台账」区块，作为「还有哪些在跑」的唯一口径。
+
+## 运行时配置（安装器自动写入 ZCode）
+
+| 配置 | 值 | 原因 |
+|---|---|---|
+| `skills.metadataBudget` | 60000 | 默认 20000 撑不住 99 个技能，超限后触发词全丢 |
+| `toolConcurrency.maxConcurrency` | 16 | 允许更多并行工具调用 |
+| `features.*` | 全开 | compact / rewind / subagent / memory / skill / mcp |
+| `hooks.maxOutputBytes` | 65536 | 台账与收尾报告可能较长 |
+| `hooks.timeoutMs` | 30000 | 收尾检查含端口探测 |
+
+同名技能（docx / pdf / pptx / xlsx / skill-creator / visualize / plugin-creator）默认跳过安装：官方插件版功能更全，用户级同名技能会把它遮蔽。
 
 ## 各工具落点
 

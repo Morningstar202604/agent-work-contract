@@ -1,14 +1,6 @@
 ---
 name: ui-ux-accessibility
-description: >-
-  Audit UI designs and code against hard usability, accessibility, and interaction
-  rules. Runs a five-pass workflow: scope, Nielsen heuristic review, WCAG 2.2
-  numeric audit (contrast ratios, target sizes, focus indicators, reflow, text
-  spacing), ARIA/keyboard widget check, and a scored remediation report. Use when
-  the user asks for UI review, accessibility audit, WCAG compliance, usability
-  heuristic, ARIA fix, contrast check, target-size check, or pattern selection.
-  Do NOT use for visual design generation (frontend-design owns that),
-  component implementation (frontend-component-lab owns that), or backend tasks.
+description: "Audit UI designs and code for usability and accessibility: Nielsen heuristics, WCAG 2.2 numeric checks, ARIA, keyboard and contrast."
 description_zh: "审计 UI 设计与代码的可用性与无障碍：Nielsen 启发式评审、WCAG 2.2 数值核对、ARIA 与键盘检查"
 license: Apache-2.0
 compatibility: Pure prompt-based; no runtime deps.

@@ -1,6 +1,7 @@
 ---
 name: aqg-decision-capture
-description: Capture, commit, and query durable project decisions (Owner rulings, agent autonomous choices, agent-via-audit adjudications) as one-line redaction-safe entries in docs/decisions/LOG.md, fighting 'why did we decide this' amnesia across long/multi-session work. commit appends a decision line through the same grammar + secret-scan gate as format (fail-closed, append-only) so the caller records automatically instead of hand-pasting; query greps the log (read-time redacted, fenced as untrusted data). Does NOT force capture or inject context — whether to record stays caller-discipline-driven. Sibling to aqg-audit-adjudication (whose verdicts it records) and aqg-evidence-closeout. Use when a durable decision is made or to look one up; NOT for impl detail recoverable from code/commits.
+description: "Capture and query durable project decisions (owner rulings, agent choices, audit adjudications) as short entries in docs/decisions/LOG.md; use when a decision must survive sessions."
+
 ---
 
 # AQG Decision Capture

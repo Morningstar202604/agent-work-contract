@@ -1,6 +1,7 @@
 ---
 name: aqg-security-review
-description: Review code for OWASP Top 10, CWE Top 25, and secure-by-default library usage in any repository. Use PROACTIVELY when writing authentication or authorization, handling user input or file uploads, working with secrets / credentials / API keys, creating new API endpoints, implementing payment / PII / sensitive-data handling, calling external APIs, modifying cryptography, or adding/modifying dependency manifests (package.json / requirements.txt / Cargo.toml / go.mod / Gemfile / pyproject.toml). Complementary to semgrep SAST and audit-mcp `/audit`; not a substitute. Defaults to the current git root and supports `--repo` override. Does not replace the host built-in /review slash command.
+description: "Review code for OWASP Top 10, CWE Top 25 and secure-by-default usage; use when writing auth, handling user input or uploads, working with secrets, or building an API."
+
 ---
 
 # AQG Security Review

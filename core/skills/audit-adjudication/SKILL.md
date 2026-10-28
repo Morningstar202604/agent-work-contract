@@ -1,6 +1,7 @@
 ---
 name: audit-adjudication
-description: "Consolidate multiple completed audit results into one traceable decision record, whether they came from the same or different reviewers, rounds, or sessions. Also use for a single result when the user explicitly asks for adjudication. Deduplicate overlapping findings, classify each as accepted, rejected, or needs-user-decision, and preserve source references. Keep hypothesis perspectives as context rather than treating them as defect findings. Do not use to start a new audit."
+description: Consolidate multiple completed audit results into one traceable decision record, whether they came from the same or different reviewers, rounds, or sessions. Also use for a single result when the user explicitly asks for adjudication.
+
 ---
 
 # /audit-adjudication — Synthesize prior audits into unified accept/reject table

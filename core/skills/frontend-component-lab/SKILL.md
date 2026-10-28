@@ -1,14 +1,6 @@
 ---
 name: frontend-component-lab
-description: >-
-  Scaffold production-grade React/TypeScript UI components wired to a design
-  token system: component + CSS Modules + design-tokens.json, plus a review
-  checklist that kills the classic LLM frontend sins (magic numbers, inline
-  styles, untyped props, missing a11y). Use when the user asks to build a
-  component / create a React component / component scaffold / UI component library
-  / design system token / frontend design system / component spec. Do NOT use for
-  pure image/design-mockup generation (use image-prompt-engineer) or for backend
-  work.
+description: "Scaffold production React/TypeScript components with CSS Modules and design-tokens.json, plus a checklist that kills magic numbers and inline styles."
 description_zh: "搭建生产级 React 与 TypeScript 组件脚手架，配套 CSS Modules 和 design-tokens.json，并提供规避魔法数字、内联样式等问题的审查清单。"
 license: Apache-2.0
 compatibility: Outputs .tsx/.css/.json source files; user wires into their TS project themselves (no network, no npm install needed to generate).

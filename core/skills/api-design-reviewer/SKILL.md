@@ -1,6 +1,7 @@
 ---
 name: api-design-reviewer
-description: "REST/GraphQL 接口契约设计评审专用。当 software-api-designer 产出 API spec、或 software-reviewer 在门禁阶段审查接口正确性/一致性/安全时调用。覆盖资源建模、命名、HTTP 语义、状态码、错误模型、分页过滤、版本演进、GraphQL Schema 设计与 N+1/鉴权风险，输出可勾选评审清单与驳回项。也用于审查新增或变更 API 端点的 PR、存量 API 的 v2 迁移审计、为团队建立 API 规范；触发词：审查 API 设计 / REST 接口设计评审 / 找出反模式。Do NOT use for 实现 API 端点或生成客户端 SDK。"
+description: REST/GraphQL 接口契约设计评审专用。当 software-api-designer 产出 API spec、或 software-reviewer 在门禁阶段审查接口正确性/一致性/安全时调用。覆盖资源建模、命名、HTTP 语义、状态码、错误模型、分页过滤、版本演进、GraphQL Schema 设计与 N+1/鉴权风险，输出可勾选评审清单与驳回项。也用于审查新增或变更 API 端点的 PR、存量 API 的 v2 迁移审计、为团队建立 API 规范
+
 license: Apache-2.0
 compatibility: Requires network access. No API keys required.
 metadata:

@@ -1,6 +1,7 @@
 ---
 name: aqg-test-quality-review
-description: Use when reviewing whether a PR's tests assert BEHAVIOR (output / side-effects / errors) or only SHAPE (types / structure / key presence), when checking whether a diff weakened, deleted or skipped tests, for coverage gaps where source changed with no paired test, for flaky patterns (sleep / wall-clock / unseeded random / live network), or for anti-horizontal-slicing review. Reviews test-QUALITY of a git diff, not coverage %. Signal only — emits a structured test-quality ledger, per-concern focus prompts, and a `needs_llm_judgement` signal; the caller runs `/audit` per concern at the depth `docs/policies/audit-trigger.md` selects. Complements aqg-multi-review (deeper than its edge_cases dimension) and aqg-code-construction (construction-side TDD). Not a test runner or coverage-percentage gate. Does not replace the host built-in /review slash command.
+description: "Review whether tests assert behavior (outputs, side effects, errors) rather than shape, and whether a diff weakened, deleted or skipped tests; flag coverage gaps."
+
 ---
 
 # AQG Test-Quality Review (signal-only)

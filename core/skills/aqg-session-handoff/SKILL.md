@@ -1,6 +1,7 @@
 ---
 name: aqg-session-handoff
-description: Generate a paste-ready cross-session handoff prompt that lets a next-session LLM cold-start on a generic project — repo/branch + environment, what is done and verified, current working state, next steps, discipline traps, the first concrete action, and open decisions. Two modes — `new` prints an 8-section skeleton (Done-so-far prefilled from the construction ledger when present); `validate` reads the filled handoff from stdin and gates it (8 sections present, no placeholder or secret residue, plus first-step / actor / audit-state checks) before paste. For a generic project session handoff WITHOUT EAF engine run state — if the repo is running an EAF engine, use eaf-session-handoff instead (it captures run_id / hold-gate / transition_log, which this does not); for a completion product HANDOFF.md, use eaf-handoff. Use at session boundaries, high context, after compaction, or when the user asks for a handoff to continue next session. Not a substitute for aqg-evidence-closeout (in-session completion evidence).
+description: "Generate a paste-ready cross-session handoff: repo/branch, what is done and verified, current state, next steps, traps, first action, open decisions."
+
 ---
 
 # AQG Session Handoff

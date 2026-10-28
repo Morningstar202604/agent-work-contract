@@ -1,6 +1,7 @@
 ---
 name: agent-work-contract
-description: "Use when the user wants to reuse, install, migrate, or sync this working contract (rules + skills + subagents + commands + hooks) into another machine or another AI coding tool, or asks 复用规则 / 装到新机器 / 换工具也要一样 / 把这套规范搬过去. Also use when auditing whether an installation is complete or up to date. Do NOT use for editing the contract's content (edit the repo directly) or for project-specific conventions."
+description: Use when the user wants to reuse, install, migrate, or sync this working contract (rules + skills + subagents + commands + hooks) into another machine or another AI coding tool, or asks 复用规则 / 装到新机器 / 换工具也要一样 / 把这套规范搬过去.
+
 description_zh: "把本套规则、技能、子代理、命令与钩子复用到任意机器/任意编程智能体：安装、升级、验证、卸载。"
 license: MIT
 metadata:

@@ -1,6 +1,7 @@
 ---
 name: aqg-startup-preflight
-description: Verify worktree + GitHub live state (dirty git, gone upstream, behind remote, missing context files, open PRs/issues, stale status docs) at SESSION START for AI team project work, before the first code edit. Use exactly once per session, not for repeated mid-session checks; not after audit/review returns. Defaults to the current git root and supports explicit repo paths.
+description: Verify worktree + GitHub live state (dirty git, gone upstream, behind remote, missing context files, open PRs/issues, stale status docs) at SESSION START for AI team project work, before the first code edit.
+
 ---
 
 # AQG Startup Preflight

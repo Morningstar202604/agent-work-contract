@@ -1,6 +1,7 @@
 ---
 name: master-checklist
-description: "Use when starting any engineering task, taking over an unfamiliar project, auditing or fixing a repo, reviewing code, delegating subtasks, or about to claim work is done. Triggers on: 按清单来 / 开工 / 接手项目 / 审项目 / 验尸 / 修 bug / 复现 / 验证 / 交付 / 自查 / 派生子任务 / 能力拉满 / 最大化执行. Enforces the owner's working contract, a capability-maximization directive, and per-task-type execution checklists; consult before starting substantial work and before delivering. Do NOT use for trivial one-step edits or pure questions that need no process."
+description: Use when starting any engineering task, taking over an unfamiliar project, auditing or fixing a repo, reviewing code, delegating subtasks, or about to claim work is done.
+
 description_zh: "主理人工作契约 + 能力最大化指令 + 分类执行清单：开工先拉满、交付带三清单。"
 license: MIT
 metadata:

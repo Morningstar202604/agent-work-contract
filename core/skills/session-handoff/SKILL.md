@@ -1,13 +1,6 @@
 ---
 name: session-handoff
-description: >-
-  Compress a long in-flight session into a cold-start handoff doc so a fresh
-  agent (or a future-you, or a teammate) can pick up with zero context: goal,
-  done, next, gotchas, key files, one-page cheat sheet. Use when the user asks
-  for a handoff / session handoff / write the current state for the next person
-  / cold-start pickup / context compression / knowledge transfer. Do NOT use for
-  long-term memory across projects (use memory-architect) or for final deliverable
-  reports (this is an internal relay, not a finished doc).
+description: "Compress a long in-flight session into a cold-start handoff doc: goal, done, next, gotchas, key files, one-page cheat sheet."
 description_zh: "把进行中的长会话压缩成冷启动交接文档，含目标、进度、下一步、坑点与关键文件，供新 Agent 接手"
 license: Apache-2.0
 compatibility: Pure local Markdown generation; offline, no network, no credentials; default dry-run.
