@@ -10,9 +10,11 @@
 - `core/skills/`：71 个技能（含本仓库的复用技能 `agent-work-contract`），覆盖工作契约、AQG 审计、代码评审、调试、TDD、架构、前端、后端、数据库、安全、可观测性、发布门禁、技能工程。
 - `core/agents/`：220 个子代理角色，按战队组织。
 - `core/commands/`：`review`、`arch-review`、`security-scan`、`test-gap`。
-- `core/hooks/`：8 个钩子 + 5 个共用模块，提供记忆注入、计划落盘、危险命令提示、验证门禁、收尾阻断、清理检查。
+- `core/hooks/`：8 个钩子 + 5 个共用模块 + Claude Code 输出适配器，提供记忆注入、计划落盘、危险命令提示、验证门禁、收尾阻断、清理检查。
 - `install.js`：跨工具安装器（ZCode / Claude Code / opencode / Codex / generic），支持 `--all`、`--dry-run`、`--home`、`--no-hooks`、`--uninstall`，幂等且备份覆盖。
-- `docs/`：`PORTABILITY.md`（能力矩阵与降级）、`HOOKS.md`（钩子协议）、`SECRETS.md`（凭据接入）、`SKILLS.md`（技能清单）。
+- `docs/`：`PORTABILITY.md`（能力矩阵与降级）、`HOOKS.md`（钩子协议）、`SECRETS.md`（凭据接入）、`SKILLS.md`（技能清单）、`REUSE-PROMPT.md`（一键复用提示词）。
+- `scripts/verify.js`：交付前自检（技能/子代理/命令/钩子数量、50 例自检、密钥与个人路径扫描、文档齐全）。
+- `.github/workflows/verify.yml`：Ubuntu + Windows 双平台跑自检、仓库校验与安装冒烟。
 - `templates/`：凭据库与记忆文件的最小模板，不含真实凭据。
 
 ### 相对原始本机配置的改动
