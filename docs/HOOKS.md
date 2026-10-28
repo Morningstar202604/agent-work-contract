@@ -1,6 +1,6 @@
 # 钩子说明
 
-8 个钩子位于 `<安装目录>/hooks/`，共用 `<安装目录>/hooks/lib/` 下的 5 个模块。全部是纯 Node.js（>= 18）、零第三方依赖、不联网。
+8 个钩子位于 `<安装目录>/hooks/`，共用 `<安装目录>/hooks/lib/` 下的 6 个模块（5 个共用模块 + 1 个 Claude Code 输出适配器 `claude-wrap.js`）。全部是纯 Node.js（>= 18）、零第三方依赖、不联网。
 
 ## 执行契约
 
@@ -59,10 +59,21 @@ npm run selftest
 
 自检在 `<仓库>/.tmp/selftest/` 建临时工作区，通过 `ZCODE_MEMORY_DIR` 把记忆重定向到临时目录，不碰真实状态。可用 `AGENT_RULES_TEST_TMP` 改位置。
 
+## Claude Code 适配器
+
+`hooks/lib/claude-wrap.js` 不是钩子，是输出适配层：接收 Claude Code 的事件 JSON，转调目标钩子，再把钩子的 ZCode 风格输出改写成 Claude Code 能识别的形状。
+
+| 事件 | 转换 |
+|---|---|
+| `SessionStart` / `UserPromptSubmit` / `PostToolUse` | `additionalContext` → `hookSpecificOutput.additionalContext`（补 `hookEventName`） |
+| `PreToolUse` | `additionalContext` → `systemMessage`（Claude Code 的 PreToolUse 没有 additionalContext 通道） |
+| `Stop` | `decision:block` + `reason` 原样透传 |
+| 其它 | `additionalContext` → `systemMessage` |
+
 ## 新增钩子的步骤
 
 1. 在 `core/hooks/` 写脚本，复用 `lib/memory.js` 的 stdin/emit/state。
-2. 在 `install.js` 的 `HOOK_SCRIPTS`、`zcodeHookEvents()`、`claudeHookEvents()` 里登记。
+2. 在 `install.js` 的 `zcodeHookEvents()`、`claudeHookEvents()` 里登记。
 3. 在 `core/hooks/selftest.js` 加用例（含 schema 校验）。
 4. 更新本文件与 `README.md` 的钩子表。
 5. `npm run selftest` 全绿再提交。

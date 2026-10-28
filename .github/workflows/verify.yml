@@ -1,0 +1,28 @@
+name: verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Hook selftest
+        run: node core/hooks/selftest.js
+      - name: Repo verification
+        run: node scripts/verify.js
+      - name: Installer dry-run
+        run: node install.js --tool zcode --home ./.tmp/ci-home
+      - name: Installed hooks run
+        run: node ./.tmp/ci-home/hooks/selftest.js

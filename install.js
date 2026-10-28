@@ -219,12 +219,13 @@ function mergeZcodeConfig(home, manifest) {
 }
 
 function claudeHookEvents(hooksDir) {
+  const wrap = path.join(hooksDir, 'lib', 'claude-wrap.js');
   const mk = (script, matcher) => ({
     ...(matcher ? { matcher } : {}),
     hooks: [
       {
         type: 'command',
-        command: `"${nodeBin()}" "${path.join(hooksDir, script)}"`,
+        command: `"${nodeBin()}" "${wrap}" "${path.join(hooksDir, script)}"`,
       },
     ],
   });

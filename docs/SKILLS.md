@@ -1,4 +1,4 @@
-# 技能清单（70）
+# 技能清单（71）
 
 安装后位于 `<安装目录>/skills/`。触发词与完整流程见各目录内的 `SKILL.md`。
 
@@ -6,6 +6,7 @@
 |---|---|
 | `agent-designer` | 设计多智能体系统：选择编排模式、搭建工作流、生成工具 schema 并分析运行日志。 |
 | `agent-hierarchy` | 为仓库设计编排者-子代理层级：按独占写入面拆分代理，让产出者与独立校验者配对。 |
+| `agent-work-contract` | 把本套规则、技能、子代理、命令与钩子复用到任意机器/任意编程智能体：安装、升级、验证、卸载。 |
 | `api-design-reviewer` | REST/GraphQL 接口契约设计评审专用。当 software-api-designer 产出 API spec、或 software-reviewer 在门禁阶段审查接口正确性/一致性/安… |
 | `aqg-audit-adjudication` | Decide accept / reject / needs-user-decision for each Claude Opus, Gemini 3.1, o3, Codex internal-… |
 | `aqg-automation-audit` | Inventory automation stack (hooks / MCP / plugins / skills / env) + overlap-check vs AQG workflow … |

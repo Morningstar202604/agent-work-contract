@@ -29,10 +29,10 @@ node install.js --tool claude         # 或只装某一个
 
 ```
 AGENTS.md              全局工作规范（16 节：输出纪律 / 自主执行 / 诚实 / 安全 / 记忆 / 收尾 / 进程 / 边界 / 工具优先级 / 移植）
-core/skills/           70 个技能（工作契约、AQG 审计、代码审查、调试、架构、前后端、数据、安全、技能路由等）
+core/skills/           71 个技能（工作契约、AQG 审计、代码审查、调试、架构、前后端、数据、安全、技能路由等）
 core/agents/           220 个子代理角色（软件/数据/内容/学术/电商/设计/视频/翻译等战队）
 core/commands/         4 个斜杠命令（review / arch-review / security-scan / test-gap）
-core/hooks/            8 个运行时钩子 + 5 个共用模块
+core/hooks/            8 个运行时钩子 + 5 个共用模块 + Claude Code 输出适配器
 install.js             跨工具安装器
 templates/             凭据库、记忆文件的最小模板（不含任何真实凭据）
 docs/                  移植说明、钩子协议、凭据接入、第三方许可
@@ -75,11 +75,12 @@ docs/                  移植说明、钩子协议、凭据接入、第三方许
 
 ## 目录详情
 
-### 技能（70）
+### 技能（71）
 
 | 技能 | 用途 |
 |---|---|
 | `master-checklist` | 开工前必读：铁律 + 能力最大化 + 分类清单 + 三清单交付 |
+| `agent-work-contract` | 本套规则的复用与安装：多工具、幂等、验证、卸载 |
 | `skill-router` | 任务→技能路由，离线确定性打分 |
 | `verification-before-completion` | 声称完成前必须出示证据 |
 | `aqg-*` | AQG 工程纪律：施工六步、审计裁决、安全评审、测试质量、会话交接等 11 个 |

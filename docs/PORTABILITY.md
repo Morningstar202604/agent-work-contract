@@ -74,7 +74,7 @@ node install.js --all
 迁移后检查：
 
 1. 目标工具的规则文件已更新（`~/.zcode/AGENTS.md` 等）。
-2. 技能目录数量与 `docs/SKILLS.md` 一致（70 个）。
+2. 技能目录数量与 `docs/SKILLS.md` 一致（71 个）。
 3. 支持钩子的工具：`cli/config.json` / `settings.json` 里能看到 8 个（Claude 为 7 个）本仓库脚本路径。
 4. 跑一次 `npm run selftest`，应为 `ALL 50 CASES PASS`。
 

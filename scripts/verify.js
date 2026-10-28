@@ -33,9 +33,9 @@ const skills = fs.readdirSync(path.join(REPO, 'core', 'skills')).filter((d) =>
   fs.existsSync(path.join(REPO, 'core', 'skills', d, 'SKILL.md'))
 );
 
-check('技能数量 = 70', () => {
-  if (skills.length !== 70) throw new Error('实际 ' + skills.length);
-  return '70';
+check('技能数量 = 71', () => {
+  if (skills.length !== 71) throw new Error('实际 ' + skills.length);
+  return '71';
 });
 
 check('每个技能都有 SKILL.md 与 name 字段', () => {
@@ -60,12 +60,12 @@ check('命令 4 个', () => {
   return '4';
 });
 
-check('钩子 8 个 + lib 5 个', () => {
+check('钩子 8 个 + lib 6 个（5 模块 + Claude 适配器）', () => {
   const hooks = fs.readdirSync(path.join(REPO, 'core', 'hooks')).filter((f) => f.endsWith('.js') && f !== 'selftest.js');
   const lib = fs.readdirSync(path.join(REPO, 'core', 'hooks', 'lib')).filter((f) => f.endsWith('.js'));
   if (hooks.length !== 8) throw new Error('钩子 ' + hooks.length);
-  if (lib.length !== 5) throw new Error('lib ' + lib.length);
-  return '8 + 5';
+  if (lib.length !== 6) throw new Error('lib ' + lib.length);
+  return '8 + 6';
 });
 
 check('钩子自检 50/50', () => {
