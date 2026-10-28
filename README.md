@@ -7,7 +7,7 @@
 ## 一条命令复用
 
 ```bash
-git clone https://github.com/Morningstar202604/agent-work-contract.git
+git clone https://gitcode.com/badhope/rules.git
 cd agent-work-contract
 node install.js --all                 # 已检测到的工具全部安装
 node install.js --tool claude         # 或只装某一个

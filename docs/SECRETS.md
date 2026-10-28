@@ -42,6 +42,28 @@ chmod 600 ~/.agent-secrets/accounts.json
 set -a; . ~/.agent-secrets/accounts.env; set +a
 ```
 
+## CLI 与五平台上传
+
+安装器会把 `scripts/accounts_cli.py` 部署到凭据库目录：
+
+```bash
+python ~/.agent-secrets/accounts_cli.py list     # 列出账号（不显示 token）
+python ~/.agent-secrets/accounts_cli.py check    # 探活各平台 API 并更新状态
+python ~/.agent-secrets/accounts_cli.py sync     # 重新生成 accounts.env 并注册用户级环境变量
+python ~/.agent-secrets/accounts_cli.py store-git  # 注入 git 凭据管理器
+python ~/.agent-secrets/accounts_cli.py env      # 输出 export 行（供 eval）
+python ~/.agent-secrets/accounts_cli.py path     # 输出凭据库目录
+```
+
+五平台默认上传（gitcode/badhope、gitee/badhope、github/x33834、github/Morningstar202604、github/badhope，仓库统一命名 `rules`）：
+
+```bash
+scripts/upload_all.sh            # 串行推送 + 8s 平台间隔限速
+UPLOAD_SLEEP=15 scripts/upload_all.sh   # 调大间隔
+```
+
+token 只从凭据库读入进程内存拼进推送 URL，不写 .git/config、不打印。
+
 ## 与规则联动
 
 `AGENTS.md` 的「本机凭据库（可选）」章节按 `AGENT_SECRETS_DIR`（默认 `~/.agent-secrets`）寻址。若沿用旧版 `~/.zcode/secrets/accounts_cli.py`，把该章节路径改成实际位置即可。

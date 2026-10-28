@@ -466,6 +466,15 @@ function installProfile(name) {
   }
 
   if (!opt.dryRun) {
+    const vault = process.env.AGENT_SECRETS_DIR || path.join(os.homedir(), '.agent-secrets');
+    fs.mkdirSync(vault, { recursive: true });
+    const cli = path.join(vault, 'accounts_cli.py');
+    fs.copyFileSync(path.join(REPO, 'scripts', 'accounts_cli.py'), cli);
+    manifest.files.push({ path: path.relative(home, cli), sha256: sha256(cli) });
+    log('  ' + sym('updated') + ' 凭据库 CLI → ' + cli);
+  }
+
+  if (!opt.dryRun) {
     fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n', 'utf8');
   }
   log('  完成。文件清单写入 ' + path.relative(home, manifestPath) + '（共 ' + manifest.files.length + ' 个文件）');

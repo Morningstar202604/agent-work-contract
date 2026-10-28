@@ -65,7 +65,7 @@
 ## 5. 迁移到新机器
 
 ```bash
-git clone https://github.com/Morningstar202604/agent-work-contract.git
+git clone https://gitcode.com/badhope/rules.git
 cd agent-work-contract
 node --version          # 需要 >= 18
 node install.js --all

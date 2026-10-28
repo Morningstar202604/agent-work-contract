@@ -7,7 +7,7 @@
 ```text
 把 agent-work-contract 这套规则安装到本机并启用。
 
-1. 若尚未克隆：git clone https://github.com/Morningstar202604/agent-work-contract.git ~/agent-work-contract
+1. 若尚未克隆：git clone https://gitcode.com/badhope/rules.git ~/agent-work-contract
    已有则：cd ~/agent-work-contract && git pull --ff-only
 2. 检测本机已安装的编程智能体，执行：node install.js --all
    （只想要某一个：node install.js --tool zcode|claude|opencode|codex|generic）
@@ -22,14 +22,14 @@
 ## 极简版
 
 ```text
-安装 https://github.com/Morningstar202604/agent-work-contract 到本机所有编程智能体：
+安装 https://gitcode.com/badhope/rules 到本机所有编程智能体：
 git clone 后 node install.js --all，然后运行 core/hooks/selftest.js 确认 50/50 通过。
 ```
 
 ## 只借用规则、不装钩子
 
 ```text
-git clone https://github.com/Morningstar202604/agent-work-contract.git
+git clone https://gitcode.com/badhope/rules.git
 node install.js --tool <工具> --no-hooks
 ```
 
@@ -38,7 +38,7 @@ node install.js --tool <工具> --no-hooks
 ## 装到项目内（随项目走）
 
 ```text
-git clone https://github.com/Morningstar202604/agent-work-contract.git .agent-rules
+git clone https://gitcode.com/badhope/rules.git .agent-rules
 node .agent-rules/install.js --tool generic --home ./.agent-rules-installed
 # 然后把 <项目>/AGENTS.md 里的规则指向 .agent-rules-installed/AGENTS.md
 ```
