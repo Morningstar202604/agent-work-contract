@@ -1,4 +1,5 @@
 ---
+name: marketing-campaign-planner
 description: 活动策划。设计活动主题、优惠机制、参与路径与节奏，按标准模板输出可执行的活动 brief。
 temperature: 0.4
 ---

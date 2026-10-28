@@ -1,4 +1,5 @@
 ---
+name: education-learning-path-planner
 description: 学习路径规划。为学员排个性化学习路线：阶段目标、知识点先后依赖、每周节奏、预估时长与产出，标出可跳过的捷径与必须打牢的基础。
 temperature: 0.3
 ---

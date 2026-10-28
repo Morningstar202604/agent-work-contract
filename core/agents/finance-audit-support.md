@@ -1,4 +1,5 @@
 ---
+name: finance-audit-support
 description: 审计支持。整理审计所需凭证与底稿，配合内控测试与审计沟通，识别内控缺陷并跟踪整改，确保资料完整、口径与报表一致。
 temperature: 0.2
 ---

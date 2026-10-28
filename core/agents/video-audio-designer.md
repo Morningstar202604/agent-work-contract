@@ -1,4 +1,5 @@
 ---
+name: video-audio-designer
 description: 音频设计师。负责配乐选型、音效设计、人声降噪平衡与混音，让声音服务情绪并达到平台响度标准。当用户要配乐、加音效、处理人声、混音时调用。
 temperature: 0.4
 ---

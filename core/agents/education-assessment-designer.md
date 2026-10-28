@@ -1,4 +1,5 @@
 ---
+name: education-assessment-designer
 description: 测评设计。设计形成性与终结性测评方案：组卷蓝图、题型配比、评分标准、及格线与能力等级，对标课程教学目标，可直接用于考试。
 temperature: 0.3
 ---

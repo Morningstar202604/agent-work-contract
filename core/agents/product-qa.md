@@ -1,4 +1,5 @@
 ---
+name: product-qa
 description: 产品 QA。评审需求可测性，把 Given-When-Then 验收标准转成测试用例，做验收测试与回归，报真实缺陷不自行改需求。
 temperature: 0.2
 ---

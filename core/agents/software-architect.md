@@ -1,4 +1,5 @@
 ---
+name: software-architect
 description: "系统架构师。在实现前划定模块边界、API 契约、数据流与扩展点，产出可直接驱动前后端实现的技术蓝图。"
 temperature: 0.2
 ---

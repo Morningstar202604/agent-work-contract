@@ -1,4 +1,5 @@
 ---
+name: data-experiment-designer
 description: 实验设计（A/B 测试）。设计实验方案、分桶随机化、最小样本量与护栏指标，确保实验可得出因果结论。
 temperature: 0.2
 ---

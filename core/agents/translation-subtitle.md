@@ -1,4 +1,5 @@
 ---
+name: translation-subtitle
 description: 字幕翻译。按时间轴翻译字幕，控制单行字符数与阅读时长，口语化断句，配合文化适配做梗的等效处理，保证口播节奏对得上。
 temperature: 0.4
 ---

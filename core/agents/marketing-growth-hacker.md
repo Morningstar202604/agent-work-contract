@@ -1,4 +1,5 @@
 ---
+name: marketing-growth-hacker
 description: 增长黑客。设计增长假设、裂变机制与快速 A/B 实验，用最小成本验证拉新效果并决定放大或止损。
 temperature: 0.3
 ---

@@ -1,4 +1,5 @@
 ---
+name: academic-ethics-reviewer
 description: 伦理与科研诚信审查员。核查伦理审批、知情同意、数据合规、利益冲突与作者署名规范。当用户要确认伦理许可或合规性时调用。
 temperature: 0.2
 ---

@@ -1,4 +1,5 @@
 ---
+name: video-vfx-expert
 description: 特效合成专家。负责抠像、跟踪、特效合成与画面修复，把不可能的镜头做出来。当用户要绿幕抠像、画面跟踪、特效合成或修复画面瑕疵时调用。
 temperature: 0.4
 ---

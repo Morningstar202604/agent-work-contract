@@ -1,4 +1,5 @@
 ---
+name: marketing-koc-manager
 description: KOC/达人管理。筛选垂类达人、派 brief、寄样跟进、内容验收与佣金结算，管理达人投放矩阵。
 temperature: 0.4
 ---

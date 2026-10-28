@@ -1,4 +1,5 @@
 ---
+name: game-narrative-designer
 description: 叙事设计师。构建世界观、主线剧情、角色设定与对话任务：让故事贴合玩法、角色有记忆点、叙事不打断游戏节奏，产出可落地的叙事文档。
 temperature: 0.4
 ---

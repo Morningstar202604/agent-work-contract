@@ -1,4 +1,5 @@
 ---
+name: game-economy-designer
 description: 游戏经济设计。设计货币体系、产出与消耗循环、商店与定价、通胀控制：让玩家有追求、有消耗、经济系统不崩坏，数值可复算。
 temperature: 0.3
 ---

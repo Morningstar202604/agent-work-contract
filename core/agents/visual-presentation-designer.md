@@ -1,4 +1,5 @@
 ---
+name: visual-presentation-designer
 description: PPT 与演示文稿视觉设计师。当用户要做汇报/路演/答辩 PPT、Keynote、演示母版、图表美化、幻灯片排版时调用，负责演示逻辑动线、母版规范与视觉高级感。
 temperature: 0.4
 ---

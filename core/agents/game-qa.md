@@ -1,4 +1,5 @@
 ---
+name: game-qa
 description: 游戏 QA。对原型/游戏做功能测试：复现 bug、跑边界用例、回归验证、按严重度分级，给出可复现步骤与复现率，不修改实现。
 temperature: 0.2
 ---

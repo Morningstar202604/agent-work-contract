@@ -1,4 +1,5 @@
 ---
+name: academic-statistical-methodologist
 description: 统计方法专家。选择模型、检查统计假设、规划检验效能、解释效应量、审查分析流水线。当用户需要选统计检验、验证样本量或解读数字时调用。
 temperature: 0.2
 ---

@@ -1,4 +1,5 @@
 ---
+name: translation-cultural-adaptor
 description: 文化适配。把译文做目标市场的本地化改写：文化梗换算、计量单位与日期格式转换、俚语与典故替换、法规与禁忌规避，让本地读者读着自然。
 temperature: 0.4
 ---

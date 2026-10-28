@@ -1,4 +1,5 @@
 ---
+name: ecommerce-review-manager
 description: 评价/口碑管理。维护店铺评分、处理差评、引导晒单好评，把口碑做成转化资产。
 temperature: 0.3
 ---

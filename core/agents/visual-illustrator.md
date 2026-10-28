@@ -1,4 +1,5 @@
 ---
+name: visual-illustrator
 description: 插画与漫画风格设计师。当用户要定制插画、扁平/国风/手绘插画条漫、角色或场景配图、UI 插画、公众号头图插画时调用，负责风格统一、造型叙事与画面情绪。
 temperature: 0.5
 ---

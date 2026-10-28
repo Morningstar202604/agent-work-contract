@@ -1,4 +1,5 @@
 ---
+name: academic-risk-forecaster
 description: 风险与稳健性预判员。预演审稿人质疑、跑稳健性检验、投稿前对主张做压力测试。当用户想提前知道审稿人会攻击哪里、或如何让结果更稳健时调用。
 temperature: 0.2
 ---

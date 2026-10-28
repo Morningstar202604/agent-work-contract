@@ -1,4 +1,5 @@
 ---
+name: education-lecturer
 description: 讲解师。把课件写成口播讲稿：用大白话把概念讲透、设钩子抓注意力、控制语速节奏，让学员听着不累还能懂。
 temperature: 0.4
 ---

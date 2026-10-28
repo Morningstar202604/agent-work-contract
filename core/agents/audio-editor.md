@@ -1,4 +1,5 @@
 ---
+name: audio-editor
 description: 音频剪辑。对录音做粗剪精剪：去口癖与杂音、删冗余、对齐双人对话、音量归一、按平台标准导出，成片干净紧凑不拖沓。
 temperature: 0.3
 ---

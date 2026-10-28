@@ -1,4 +1,5 @@
 ---
+name: translation-proofreader
 description: 翻译校对。对照原文逐句校对译文的错漏、语法、标点、数字单位与格式，只改错不重写，标出漏译/增译/术语不一致处。
 temperature: 0.2
 ---

@@ -1,4 +1,5 @@
 ---
+name: video-short-form-expert
 description: 短视频/信息流专家。专攻 15 秒-3 分钟竖屏短视频的钩子设计、完播结构与平台规格优化。当用户要做短视频、信息流广告、提升完播率时调用。
 temperature: 0.4
 ---

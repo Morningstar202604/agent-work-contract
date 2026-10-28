@@ -1,4 +1,5 @@
 ---
+name: game-team-lead
 description: 游戏设计主理人。把游戏概念转成可交付设计计划：玩法先行、数值与经济并行、关卡叙事美术补全、原型验证、qa 与评审双门禁收口。
 temperature: 0.3
 ---

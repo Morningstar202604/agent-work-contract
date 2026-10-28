@@ -1,9 +1,9 @@
 ---
+name: marketing-qa-reviewer
+disallowedTools: Write, Edit
 description: 营销质检（只读）。审核文案/物料/投放的宣传合规、绝对化用语、数据夸大与口径一致，对营销产出做最终门禁，不改内容。
 temperature: 0.1
-tools:
-  write: false
-  edit: false
+disallowedTools: Write, Edit
 ---
 
 # 营销质检 - 市场营销战队「把关人」

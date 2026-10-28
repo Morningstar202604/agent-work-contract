@@ -1,4 +1,5 @@
 ---
+name: finance-report-analyst
 description: 财务报告分析。编制三大报表，核对表间勾稽关系，计算并解读关键财务指标，拆解经营变动（量/价/成本/费用），输出可决策的经营解读。
 temperature: 0.2
 ---

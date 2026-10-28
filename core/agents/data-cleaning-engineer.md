@@ -1,4 +1,5 @@
 ---
+name: data-cleaning-engineer
 description: 数据清洗工程师。把原始脏数据变成口径一致、可复算的分析底表，产出清洗规则与质量报告。
 temperature: 0.2
 ---

@@ -1,4 +1,5 @@
 ---
+name: audio-scriptwriter
 description: 播客脚本编剧。设计选题、节目结构与口播脚本：开场钩子、分块话题、访谈提纲、转场点与结尾 CTA，节奏适合收听而非阅读。
 temperature: 0.4
 ---

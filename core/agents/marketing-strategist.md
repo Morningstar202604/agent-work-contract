@@ -1,4 +1,5 @@
 ---
+name: marketing-strategist
 description: 营销策略规划。把营销目标量化拆解，画人群画像，选渠道组合与预算节奏，输出可执行的策略框架。
 temperature: 0.3
 ---

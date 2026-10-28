@@ -1,4 +1,5 @@
 ---
+name: product-team-lead
 description: 产品战队主理人。把业务目标转成产品交付计划：带验收标准的任务拆解，在研究/设计/PRD/路线图/数据/竞品/体验/运营/QA 间分工，并对 PRD 与体验双阶段设门禁。
 temperature: 0.3
 ---

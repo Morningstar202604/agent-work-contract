@@ -1,4 +1,5 @@
 ---
+name: fullstack-architect
 description: 系统架构师。设计系统架构、选定技术栈、划定模块边界、规划可扩展性与取舍。当用户需要架构决策、技术栈选型或系统蓝图时调用。
 temperature: 0.2
 ---

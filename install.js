@@ -86,6 +86,41 @@ function copyFile(src, dest, manifest) {
   return before ? 'updated' : 'created';
 }
 
+const LOCAL_SECTION = '## 十七、本机环境与个人约定（升级时保留）';
+
+function splitLocalSection(text) {
+  const idx = text.indexOf(LOCAL_SECTION);
+  return idx < 0 ? null : text.slice(idx).trimEnd();
+}
+
+function installRules(src, dest, manifest) {
+  const existing = (() => {
+    try {
+      return fs.readFileSync(dest, 'utf8');
+    } catch {
+      return '';
+    }
+  })();
+  const local = splitLocalSection(existing);
+  if (!local) return copyFile(src, dest, manifest);
+
+  const normalized = existing.replace(/\r\n/g, '\n');
+  const head = normalized.split(LOCAL_SECTION)[0].trimEnd();
+  const repoBody = fs.readFileSync(src, 'utf8').replace(/\r\n/g, '\n').trimEnd();
+  const currentBody = head.replace(/^<!-- agent-work-contract v[\d.]+ -->\n\n/, '').trimEnd();
+  if (repoBody === currentBody) {
+    manifest.files.push({ path: path.relative(manifest.home, dest), sha256: sha256(dest) });
+    return 'same';
+  }
+
+  const merged = `${repoBody}\n\n${local}\n`;
+  const before = sha256(dest);
+  if (before) backup(dest);
+  if (!opt.dryRun) fs.writeFileSync(dest, merged, 'utf8');
+  manifest.files.push({ path: path.relative(manifest.home, dest), sha256: sha256(dest) });
+  return 'merged';
+}
+
 function copyTree(srcDir, destDir, manifest) {
   let created = 0;
   let updated = 0;
@@ -123,7 +158,7 @@ function backup(file) {
 
 function readJson(file, fallback) {
   try {
-    return JSON.parse(fs.readFileSync(file, 'utf8'));
+    return JSON.parse(fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, ''));
   } catch {
     return fallback;
   }
@@ -374,8 +409,8 @@ function installProfile(name) {
   ensureDir(home);
 
   const rulesDest = path.join(home, profile.rules);
-  const st = copyFile(path.join(REPO, 'AGENTS.md'), rulesDest, manifest);
-  log('  ' + sym(st) + ' 规则 ' + profile.rules);
+  const st = installRules(path.join(REPO, 'AGENTS.md'), rulesDest, manifest);
+  log('  ' + sym(st) + ' 规则 ' + profile.rules + (st === 'merged' ? '（已保留本机个人段落）' : ''));
 
   const skillStats = copyTree(path.join(CORE, 'skills'), path.join(home, profile.skills), manifest);
   log('  ' + sym('updated') + ' 技能 → ' + profile.skills + '/（新增 ' + skillStats.created + '，更新 ' + skillStats.updated + '，未变 ' + skillStats.same + '）');

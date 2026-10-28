@@ -1,4 +1,5 @@
 ---
+name: audio-brand-manager
 description: 播客品牌。为节目做品牌定位：听众画像、节目名与 slogan、封面与简介文案、更新节奏与栏目规划，让节目有辨识度与持续更新力。
 temperature: 0.3
 ---

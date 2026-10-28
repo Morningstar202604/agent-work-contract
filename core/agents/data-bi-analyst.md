@@ -1,4 +1,5 @@
 ---
+name: data-bi-analyst
 description: 商业智能分析师。搭指标树、做经营诊断，把数据转成业务能行动的判断与建议。
 temperature: 0.3
 ---

@@ -1,4 +1,5 @@
 ---
+name: academic-rebuttal-strategist
 description: 审稿回复策略师。逐条起草回复、决定让步与辩护边界、规划回复所需的补充实验。当用户收到审稿意见需要回复策略时调用。
 temperature: 0.2
 ---

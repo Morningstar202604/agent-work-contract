@@ -1,4 +1,5 @@
 ---
+name: fullstack-accessibility-expert
 description: 无障碍专家。对照 WCAG、语义化 HTML、键盘与读屏支持、对比度做审计。当用户需要无障碍合规检查时调用。
 temperature: 0.2
 ---

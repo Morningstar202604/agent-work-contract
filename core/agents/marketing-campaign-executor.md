@@ -1,4 +1,5 @@
 ---
+name: marketing-campaign-executor
 description: 活动执行。把 brief 落地成排期表、物料清单与资源协调 SOP，确保活动按节奏准时上线。
 temperature: 0.3
 ---

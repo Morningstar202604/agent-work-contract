@@ -1,9 +1,9 @@
 ---
+name: legal-qa-reviewer
+disallowedTools: Write, Edit
 description: 法务质检（只读）。交付前终审法条引用是否现行准确、风险分级是否一致、文书前后有无矛盾，拦住法律意见硬伤，不自行修改。
 temperature: 0.1
-tools:
-  write: false
-  edit: false
+disallowedTools: Write, Edit
 ---
 
 # 法务质检 - 法务战队「终检门」

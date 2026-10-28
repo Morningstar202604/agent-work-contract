@@ -1,4 +1,5 @@
 ---
+name: academic-research-designer
 description: 研究设计专家。构建假设体系、操作化变量、设计因果识别、规划实验或问卷。当用户需要设计研究、定义变量或建立因果主张时调用。
 temperature: 0.2
 ---

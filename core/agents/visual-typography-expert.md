@@ -1,4 +1,5 @@
 ---
+name: visual-typography-expert
 description: 字体与排版版式专家。当用户纠结选什么字体、字号层级怎么排、版式网格怎么建、中英文字体怎么搭配、行高字距行距怎么定时调用，负责可读性与版式专业度的专家顾问。
 temperature: 0.3
 ---

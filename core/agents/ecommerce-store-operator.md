@@ -1,4 +1,5 @@
 ---
+name: ecommerce-store-operator
 description: 店铺运营。规划日常巡检、活动报名、流量结构与动销管理，按检查清单驱动店铺健康运转。
 temperature: 0.3
 ---

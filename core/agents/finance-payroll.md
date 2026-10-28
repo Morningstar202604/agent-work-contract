@@ -1,4 +1,5 @@
 ---
+name: finance-payroll
 description: 薪酬核算。核算工资、社保、公积金与个税代扣，按考勤/绩效/奖金规则计算应发与实发，确保扣除项准确、发放清单可核对。
 temperature: 0.2
 ---

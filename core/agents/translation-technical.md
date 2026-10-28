@@ -1,4 +1,5 @@
 ---
+name: translation-technical
 description: 技术翻译。翻译 API 文档、开发手册、代码注释与技术白皮书，确保术语准确、命令与代码原样保留、技术语义不被译错。
 temperature: 0.3
 ---

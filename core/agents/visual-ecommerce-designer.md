@@ -1,4 +1,5 @@
 ---
+name: visual-ecommerce-designer
 description: 电商视觉设计师。当用户要做电商主图、直通车/钻展图、详情页、手机端长图、活动承接页、促销卖点图时调用，负责高点击率、卖点清晰、转化导向的电商视觉。
 temperature: 0.4
 ---

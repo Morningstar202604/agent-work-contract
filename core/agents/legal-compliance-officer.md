@@ -1,4 +1,5 @@
 ---
+name: legal-compliance-officer
 description: 合规官。搭建业务合规体系，审查业务模式与营销活动的合规性，起草内控制度，识别监管红线，出整改方案。
 temperature: 0.2
 ---

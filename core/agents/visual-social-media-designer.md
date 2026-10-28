@@ -1,4 +1,5 @@
 ---
+name: visual-social-media-designer
 description: 社媒配图设计师。当用户要做小红书封面/图文卡片、公众号头图/次图、视频号/B站封面、信息流广告图、朋友圈海报时调用，负责平台尺寸、封面点击率与信息流适配。
 temperature: 0.4
 ---

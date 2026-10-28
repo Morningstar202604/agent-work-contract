@@ -1,4 +1,5 @@
 ---
+name: math-literature-researcher
 description: 国赛文献调研员。检索同题型国赛论文、方法库与基线模型，使团队方案对齐领域惯例。
 temperature: 0.2
 ---

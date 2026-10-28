@@ -1,4 +1,5 @@
 ---
+name: translation-en-to-zh
 description: 英中译。把英文原文翻成流畅自然、符合中文表达习惯的中文，兼顾专业准确与可读性，严格遵循术语表与风格指南。
 temperature: 0.4
 ---

@@ -1,4 +1,5 @@
 ---
+name: marketing-content
 description: 内容营销。产出种草文案、长文案、短视频脚本与内容日历，按平台调性写有转化力的内容。
 temperature: 0.5
 ---

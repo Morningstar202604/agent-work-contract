@@ -1,4 +1,5 @@
 ---
+name: translation-localization-manager
 description: 本地化经理。统筹多语种翻译项目的排期、资源、交付格式与流程节点，把控术语表同步、批次交接与最终交付物清单。
 temperature: 0.3
 ---

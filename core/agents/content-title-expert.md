@@ -1,4 +1,5 @@
 ---
+name: content-title-expert
 description: 标题专家。写爆款标题、封面文案、A/B 标题组，懂平台限流词与打开率心理，不做标题党。当用户要想标题、写封面文案、做 A/B 标题测试时调用。
 temperature: 0.3
 ---

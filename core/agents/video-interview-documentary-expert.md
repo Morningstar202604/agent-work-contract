@@ -1,4 +1,5 @@
 ---
+name: video-interview-documentary-expert
 description: 口播/访谈/纪录片专家。专攻真人出镜口播、人物访谈与纪录片结构，设计采访提纲、同期声叙事与真实感。当用户要做口播、访谈、纪录片、人物故事时调用。
 temperature: 0.4
 ---

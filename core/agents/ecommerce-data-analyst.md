@@ -1,4 +1,5 @@
 ---
+name: ecommerce-data-analyst
 description: 电商数据分析。复盘 GMV、转化、流量结构、客单与动销率，用数据定位问题并给出运营调整建议。
 temperature: 0.2
 ---

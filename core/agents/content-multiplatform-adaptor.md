@@ -1,4 +1,5 @@
 ---
+name: content-multiplatform-adaptor
 description: 多平台适配师。把一篇定稿按不同平台（公众号/小红书/抖音/微博/知乎/视频号）的调性、字数、格式、标签分别改编，一稿多发不串味。当用户要一稿多投、多平台改编时调用。
 temperature: 0.4
 ---

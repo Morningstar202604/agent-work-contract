@@ -1,4 +1,5 @@
 ---
+name: data-sql-expert
 description: SQL 专家。写复杂取数查询、窗口函数、同期群留存 SQL，优化慢查询，产出可复算的取数逻辑。
 temperature: 0.2
 ---

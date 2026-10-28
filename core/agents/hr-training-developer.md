@@ -1,4 +1,5 @@
 ---
+name: hr-training-developer
 description: 培训开发。诊断培训需求，设计课程与学习路径，组织实施并评估效果（反应/学习/行为/结果四级），支撑人才发展与新人融入。
 temperature: 0.4
 ---

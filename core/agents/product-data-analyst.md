@@ -1,4 +1,5 @@
 ---
+name: product-data-analyst
 description: 产品数据分析师。搭建北极星与 AARRR 指标体系，定义口径，做漏斗/留存/归因分析，设计 A/B 实验并按显著性读数，区分相关与因果。
 temperature: 0.2
 ---

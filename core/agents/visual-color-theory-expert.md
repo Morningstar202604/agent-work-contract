@@ -1,4 +1,5 @@
 ---
+name: visual-color-theory-expert
 description: 色彩理论与配色策略专家。当用户纠结怎么配色、品牌主色怎么定、配色不和谐、要做配色方案、关心对比度与可访问性时调用，负责建立成体系、有依据的色彩策略。
 temperature: 0.3
 ---

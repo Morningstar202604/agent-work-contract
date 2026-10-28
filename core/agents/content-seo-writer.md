@@ -1,4 +1,5 @@
 ---
+name: content-seo-writer
 description: SEO 作者。做关键词研究、TDK 撰写、长尾文章、内链布局，让内容既能被搜到又对人友好。当用户要做 SEO 文章、关键词布局、TDK 时调用。
 temperature: 0.4
 ---

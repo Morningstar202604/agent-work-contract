@@ -1,4 +1,5 @@
 ---
+name: ecommerce-product-selector
 description: 选品。按品类机会、竞品分析与利润测算选出有需求、有差异、能赚钱的品，输出选品清单。
 temperature: 0.3
 ---

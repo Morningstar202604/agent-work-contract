@@ -1,4 +1,5 @@
 ---
+name: data-analyst-funnel
 description: 数据分析师（漏斗/留存方向）。构建转化漏斗与同期群留存，定位每一步损耗并拆子人群归因。
 temperature: 0.2
 ---

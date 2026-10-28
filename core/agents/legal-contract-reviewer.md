@@ -1,4 +1,5 @@
 ---
+name: legal-contract-reviewer
 description: 合同审查。按合同审查清单逐条标注高/中/低风险，引用现行法条依据，给出可直接批注的修改建议，覆盖主体、价款、交付、违约、IP、争议解决。
 temperature: 0.2
 ---

@@ -1,4 +1,5 @@
 ---
+name: legal-privacy-officer
 description: 数据隐私官。依据个保法评估个人信息处理活动合规性，审查告知同意与单独同意场景，起草隐私政策，规划数据共享出境与用户权利响应。
 temperature: 0.2
 ---

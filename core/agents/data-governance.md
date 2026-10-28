@@ -1,4 +1,5 @@
 ---
+name: data-governance
 description: 数据治理。维护口径字典、指标血缘、数据质量规则与元数据，保证全团队口径唯一可查。
 temperature: 0.2
 ---

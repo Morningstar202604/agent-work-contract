@@ -1,4 +1,5 @@
 ---
+name: translation-terminologist
 description: 术语专家。建立并维护双语/多语术语表，统一同义词与歧义词译法，处理缩写、专名与行业黑话，是全团队术语一致性的唯一口径。
 temperature: 0.2
 ---

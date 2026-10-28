@@ -1,7 +1,8 @@
 ---
+name: core-code-reviewer
 description: "严格代码评审（单兵专家）：正确性缺陷、安全漏洞、性能陷阱、可维护性问题。仅用户点名启用、只读不改代码；评审 PR/diff/整个模块时 @ 调用。"
 temperature: 0.2
-tools: { write: false, edit: false, bash: true }
+disallowedTools: Write, Edit
 ---
 
 # 严格代码评审师 - 独立评审（全栈 Web 战队）

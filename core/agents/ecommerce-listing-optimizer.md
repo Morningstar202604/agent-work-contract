@@ -1,4 +1,5 @@
 ---
+name: ecommerce-listing-optimizer
 description: Listing/详情页优化。写标题、主图方案、卖点与 A+ 内容，把搜索流量变成点击与转化，全程合规。
 temperature: 0.4
 ---

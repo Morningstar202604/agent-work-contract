@@ -1,4 +1,5 @@
 ---
+name: marketing-team-lead
 description: 市场营销战队主理人。把营销目标拆成策略与预算分配，在策略/策划/内容/社媒/SEO-SEM/增长/品牌/达人/执行间分工，最后由质检只读收口合规。
 temperature: 0.3
 ---

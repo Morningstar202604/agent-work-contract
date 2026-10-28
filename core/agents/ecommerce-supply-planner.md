@@ -1,4 +1,5 @@
 ---
+name: ecommerce-supply-planner
 description: 供应链计划。算安全库存、补货周期与周转，按动销预测备货，防止断货与压货。
 temperature: 0.2
 ---

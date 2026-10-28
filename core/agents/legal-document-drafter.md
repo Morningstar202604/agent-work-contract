@@ -1,4 +1,5 @@
 ---
+name: legal-document-drafter
 description: 法律文书起草。依据审查意见与业务需求起草/修订合同、函件（律师函/催告函）、制度与协议，条款严谨、逻辑自洽、权利义务对等。
 temperature: 0.4
 ---

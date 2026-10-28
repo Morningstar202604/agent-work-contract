@@ -1,4 +1,5 @@
 ---
+name: legal-regulatory-watcher
 description: 监管跟踪。监测与业务相关的法律法规/司法解释更新，识别生效时间与适用范围，评估对现有业务/合同/制度的影响，出合规预警与整改优先级。
 temperature: 0.2
 ---

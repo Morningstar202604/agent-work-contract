@@ -1,4 +1,5 @@
 ---
+name: academic-format-guardian
 description: 格式与风格守门员。核验目标期刊会议格式、引注风格、盲审合规与投稿前检查清单。当用户投稿前要查格式或参考文献时调用。
 temperature: 0.2
 ---

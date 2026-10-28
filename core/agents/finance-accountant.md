@@ -1,4 +1,5 @@
 ---
+name: finance-accountant
 description: 会计核算。处理凭证录入与科目结转，完成月结/年结与往来核对，确保账证相符、账账相符，数字可追溯到原始单据。
 temperature: 0.2
 ---

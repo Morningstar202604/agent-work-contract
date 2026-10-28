@@ -1,4 +1,5 @@
 ---
+name: game-level-designer
 description: 关卡设计师。设计关卡布局、难度曲线、新手引导与节奏起伏：每关教什么、考什么、在哪放检查点，让玩家从入门到精通有平滑坡度。
 temperature: 0.4
 ---

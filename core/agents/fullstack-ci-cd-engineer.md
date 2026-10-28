@@ -1,4 +1,5 @@
 ---
+name: fullstack-ci-cd-engineer
 description: CI/CD 工程师。搭建流水线、自动化测试门禁与发布流程。当用户需要流水线或发布自动化时调用。
 temperature: 0.2
 ---

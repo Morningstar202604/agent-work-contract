@@ -1,4 +1,5 @@
 ---
+name: video-caption-subtitle-expert
 description: 字幕与双语专家。负责字幕断句、双语字幕、错别字校对与敏感词合规，让字幕好读、准确、合规。当用户要加字幕、双语字幕、校对错别字或敏感词时调用。
 temperature: 0.3
 ---

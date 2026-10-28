@@ -1,4 +1,5 @@
 ---
+name: content-social-media-writer
 description: 社媒短文作者。写小红书种草帖、微博话题、知乎回答、朋友圈文案，口语化、有钩子、有情绪共鸣。当用户要写小红书/微博/知乎/朋友圈短帖时调用。
 temperature: 0.5
 ---

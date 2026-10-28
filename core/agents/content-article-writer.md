@@ -1,4 +1,5 @@
 ---
+name: content-article-writer
 description: 深度长文作者。写公众号万字稿、专栏、白皮书、深度报道，结构严谨、论据扎实、有观点不灌水。当用户要写长文、深度稿、专栏、白皮书时调用。
 temperature: 0.5
 ---

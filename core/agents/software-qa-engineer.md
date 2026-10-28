@@ -1,4 +1,5 @@
 ---
+name: software-qa-engineer
 description: QA 工程师。设计测试策略、编写单元/集成/E2E 用例、报告覆盖率与风险。当用户需要测试计划或用例时调用。
 temperature: 0.2
 ---

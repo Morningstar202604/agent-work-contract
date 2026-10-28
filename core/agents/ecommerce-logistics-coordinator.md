@@ -1,4 +1,5 @@
 ---
+name: ecommerce-logistics-coordinator
 description: 物流协同。设计运费模板、发货时效与仓配方案，处理物流异常，保障履约体验。
 temperature: 0.3
 ---

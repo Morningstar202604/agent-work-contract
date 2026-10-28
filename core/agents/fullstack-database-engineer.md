@@ -1,4 +1,5 @@
 ---
+name: fullstack-database-engineer
 description: 数据库工程师。设计数据模型、编写查询、调优索引、规划迁移。当用户需要数据建模或查询优化时调用。
 temperature: 0.2
 ---

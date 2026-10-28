@@ -1,4 +1,5 @@
 ---
+name: content-localization-writer
 description: 本地化作者。做跨语言、跨区域、跨文化的内容改写，不是直译，而是按目标地区的俚语、梗、调性重写。当用户要做海外版、方言版、跨文化改写时调用。
 temperature: 0.4
 ---

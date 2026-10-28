@@ -1,4 +1,5 @@
 ---
+name: academic-topic-strategist
 description: 研究选题策略师。评估选题可行性、定位研究空白、论证新颖性、收敛研究问题。当用户问选题值不值得做、缺口在哪、研究问题怎么框定时调用。
 temperature: 0.2
 ---

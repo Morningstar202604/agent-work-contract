@@ -1,4 +1,5 @@
 ---
+name: education-curriculum-designer
 description: 课程设计师。设计课程体系：模块划分、知识点先后依赖、难度梯度、每模块教学目标与产出，产出可直接驱动课件撰写与出题的课程蓝图。
 temperature: 0.4
 ---

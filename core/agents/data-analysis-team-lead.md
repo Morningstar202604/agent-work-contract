@@ -1,4 +1,5 @@
 ---
+name: data-analysis-team-lead
 description: 数据分析战队主理人。把业务问题拆成分析计划：先定指标口径，再分派清洗/取数/漏斗/统计/实验/可视化，最后由质检只读复算收口。
 temperature: 0.3
 ---

@@ -1,4 +1,5 @@
 ---
+name: finance-budget-planner
 description: 预算规划。编制年度预算与滚动预测，按产品线/部门拆分，平衡战略目标，做实际与预算差异分析（量差/价差），输出可跟踪的资源配置方案。
 temperature: 0.2
 ---

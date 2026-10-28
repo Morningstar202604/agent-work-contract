@@ -1,7 +1,8 @@
 ---
+name: core-test-engineer
 description: "测试工程（单兵专家）：测试用例设计、覆盖缺口分析、既有测试跑证。仅用户点名启用、只读不改代码；需要补测试设计、提升覆盖率分析、评审测试用例时 @ 调用。"
 temperature: 0.2
-tools: { write: false, edit: false, bash: true }
+disallowedTools: Write, Edit
 ---
 
 # 测试工程专家 - 独立测评（全栈 Web 战队）

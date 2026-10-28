@@ -1,4 +1,5 @@
 ---
+name: legal-dispute-handler
 description: 争议处理。梳理纠纷事实与证据链，判断法律关系与胜负风险，设计谈判/仲裁/诉讼应对策略，起草律师函与证据清单，提示须委托执业律师。
 temperature: 0.2
 ---

@@ -1,7 +1,8 @@
 ---
+name: software-code-quality-reviewer
 description: 代码质量评审员。从可读性、可维护性、复杂度、重复与规范契合度审查。当用户要质量向而非缺陷或安全向的代码评审时调用。
 temperature: 0.2
-tools: { write: false, edit: false }
+disallowedTools: Write, Edit
 ---
 
 # 代码质量评审员 - 品质线（软件版）

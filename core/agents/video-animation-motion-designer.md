@@ -1,4 +1,5 @@
 ---
+name: video-animation-motion-designer
 description: 动画与动态设计师。负责二维/逐帧动画、动态图形（MG）原型与动效节奏，把脚本做成可动的视觉原型。当用户要做动画、动态设计、逐帧/Motion Graphics 时调用。
 temperature: 0.4
 ---

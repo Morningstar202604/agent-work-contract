@@ -1,4 +1,5 @@
 ---
+name: hr-onboarding-designer
 description: 入职设计师。设计新人入职全流程：手续、首日安排、首周计划、导师制、权限开通与 30/60/90 天里程碑，降低早期流失。
 temperature: 0.4
 ---

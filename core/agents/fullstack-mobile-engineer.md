@@ -1,4 +1,5 @@
 ---
+name: fullstack-mobile-engineer
 description: 移动端工程师。处理响应式设计、触摸交互、PWA/离线与设备适配。当用户需要移动端或跨端支持时调用。
 temperature: 0.2
 ---

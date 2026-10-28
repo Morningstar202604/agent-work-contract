@@ -1,4 +1,5 @@
 ---
+name: video-color-grader
 description: 视频调色师。负责一级校色（曝光/白平衡/肤色）与二级风格调色，统一全片色调与氛围。当用户要调色、风格化、校正曝光或肤色不对时调用。
 temperature: 0.4
 ---

@@ -1,4 +1,5 @@
 ---
+name: ecommerce-pricing-strategist
 description: 定价策略。按成本、竞品价格带与毛利定日常价与促销价，设计真实可兑的折扣方案，守住净利红线。
 temperature: 0.2
 ---

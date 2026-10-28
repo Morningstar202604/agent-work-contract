@@ -1,4 +1,5 @@
 ---
+name: video-motion-graphics-designer
 description: 动效包装设计师。负责片头片尾、品牌动效包装、字幕条与动态图形包装，统一全片视觉风格。当用户要做片头片尾、动效包装、品牌模板时调用。
 temperature: 0.4
 ---

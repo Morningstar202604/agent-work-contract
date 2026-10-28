@@ -1,4 +1,5 @@
 ---
+name: product-operations
 description: 产品运营。设计上线策略、用户引导与冷启动方案，搭增长闭环与反馈收集通道，把功能推到目标用户手里并回收数据。
 temperature: 0.4
 ---

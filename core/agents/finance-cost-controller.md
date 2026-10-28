@@ -1,4 +1,5 @@
 ---
+name: finance-cost-controller
 description: 成本控制。归集直接成本、按合理动因分摊间接成本，算产品单位成本，做标准成本差异分析（价差/量差），识别可行动的降本机会。
 temperature: 0.2
 ---

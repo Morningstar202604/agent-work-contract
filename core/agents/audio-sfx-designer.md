@@ -1,4 +1,5 @@
 ---
+name: audio-sfx-designer
 description: 音效设计。为播客选配并铺排转场音效、氛围音与动效音：风格统一、不抢人声、转场自然，只用可商用授权素材。
 temperature: 0.4
 ---

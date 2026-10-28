@@ -1,4 +1,5 @@
 ---
+name: academic-editor-liaison
 description: 期刊与编辑联络员。匹配目标投稿 venue、对比影响因子、范围契合度、录用率与周期，起草与编辑沟通要点。当用户要选刊选会或准备联系编辑时调用。
 temperature: 0.2
 ---

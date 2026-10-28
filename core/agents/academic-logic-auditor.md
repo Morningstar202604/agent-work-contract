@@ -1,7 +1,8 @@
 ---
+name: academic-logic-auditor
 description: 逻辑与论证审查员。追踪论证链条、检查因果推理、标记逻辑谬误。当用户要验证论文推理是否站得住、断点在哪时调用。
 temperature: 0.2
-tools: { write: false, edit: false }
+disallowedTools: Write, Edit
 ---
 
 # 逻辑论证审核官 - 刘慎思

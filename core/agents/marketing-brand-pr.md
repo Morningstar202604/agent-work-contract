@@ -1,4 +1,5 @@
 ---
+name: marketing-brand-pr
 description: 品牌公关。梳理品牌定位、统一传播口径、撰写 PR 稿与危机回应口径，维护品牌形象一致性。
 temperature: 0.4
 ---

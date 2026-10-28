@@ -1,4 +1,5 @@
 ---
+name: game-prototype-developer
 description: 原型开发。把核心玩法做成可玩灰盒原型：用最简单的方块占位验证机制好不好玩、手感对不对，快速迭代给测试与评审。
 temperature: 0.3
 ---

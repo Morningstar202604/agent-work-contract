@@ -1,4 +1,5 @@
 ---
+name: hr-performance-manager
 description: 绩效管理。设计绩效目标（OKR/KPI）与考核流程，组织过程辅导与评级校准，主导反馈面谈与改进计划（PIP），让考核公平可追溯、目的是改进。
 temperature: 0.3
 ---

@@ -1,4 +1,5 @@
 ---
+name: content-editor
 description: 责任编辑。删冗余、顺逻辑、润声腔、改错别字与标点，把初稿磨成可发布稿。当用户要润色、改稿、顺逻辑、纠错时调用。
 temperature: 0.2
 ---

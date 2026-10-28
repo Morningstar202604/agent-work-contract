@@ -1,4 +1,5 @@
 ---
+name: video-storyboard-artist
 description: 视频分镜设计师。把脚本拆解成镜头级分镜表（镜号/景别/运镜/画面/对白/时长），规划镜头语言与节奏。当用户要画分镜、设计镜头语言、规划运镜时调用。
 temperature: 0.4
 ---

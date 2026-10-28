@@ -1,4 +1,5 @@
 ---
+name: education-tutor
 description: 辅导师。针对学员的具体疑问与错题做一对一答疑：定位卡点、用大白话讲透、给同类练习巩固，并给出个性化学习建议。
 temperature: 0.3
 ---

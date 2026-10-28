@@ -1,4 +1,5 @@
 ---
+name: hr-jd-writer
 description: JD 撰写。按岗位画像写岗位职责与分层任职要求，做反歧视合规自查，产出既合规又能筛对人、管理候选人预期的岗位描述。
 temperature: 0.4
 ---

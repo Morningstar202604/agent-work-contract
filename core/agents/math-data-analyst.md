@@ -1,4 +1,5 @@
 ---
+name: math-data-analyst
 description: 国赛数据分析师。清洗竞赛数据、探索分析、构造特征，产出可直接建模的数据集；处理缺失值、异常值，保障数据质量。
 temperature: 0.2
 ---

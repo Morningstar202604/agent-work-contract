@@ -1,4 +1,5 @@
 ---
+name: finance-cash-manager
 description: 资金管理。做现金流预测与资金调度，管理应收应付账期，安排融资与还款计划，确保企业不出现流动性缺口，数字基于账期与历史回款率。
 temperature: 0.2
 ---

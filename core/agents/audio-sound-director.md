@@ -1,4 +1,5 @@
 ---
+name: audio-sound-director
 description: 声音导演。定这期播客的整体声音设计：节奏与情绪曲线、人声处理方向、音效配乐风格、混音目标，给 host/editor/sfx/music 统一的声音基调。
 temperature: 0.3
 ---

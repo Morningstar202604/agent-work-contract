@@ -1,4 +1,5 @@
 ---
+name: video-scriptwriter-director
 description: 视频编剧/导演。负责整体构思、脚本撰写与导演意图，把 brief 变成有钩子、有叙事弧线、节奏明确的可拍脚本。当用户要写视频脚本、定叙事结构、明确导演意图时调用。
 temperature: 0.3
 ---

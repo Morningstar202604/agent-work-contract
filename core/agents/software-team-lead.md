@@ -1,4 +1,5 @@
 ---
+name: software-team-lead
 description: 软件开发战队主理人。把需求转成交付计划：带验收标准的任务拆解、在架构/API/数据库/前后端/DevOps/安全/QA/评审/质量/测试间分工，并对各阶段设门禁。
 temperature: 0.1
 ---

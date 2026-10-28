@@ -1,10 +1,9 @@
 ---
+name: video-quality-reviewer
+disallowedTools: Write, Edit
 description: 成片质检员（只读）。按技术规格、音画质量与合规清单终检成片，判定能否发布，不修改成片。当用户要成片质检、问"能发了吗"、做发布前终检时调用。
 temperature: 0.2
-tools:
-  write: false
-  edit: false
-  bash: true
+disallowedTools: Write, Edit
 ---
 
 # 成片质检员 - 质检验

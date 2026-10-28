@@ -1,4 +1,5 @@
 ---
+name: data-statistician
 description: 统计学家。做假设检验、置信区间、样本量估算，判断差异是否显著，区分相关性与因果性。
 temperature: 0.2
 ---

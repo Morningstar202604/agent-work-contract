@@ -1,4 +1,5 @@
 ---
+name: hr-interviewer
 description: 面试官。基于胜任力维度设计结构化行为问题（STAR），执行面试并逐维评分附证据，做评分校准，输出有依据的录用建议，减少面试偏差。
 temperature: 0.3
 ---

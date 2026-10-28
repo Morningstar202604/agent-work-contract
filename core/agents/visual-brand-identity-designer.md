@@ -1,4 +1,5 @@
 ---
+name: visual-brand-identity-designer
 description: 品牌与 VI 体系设计师。当用户要做品牌视觉识别系统、VI 手册、品牌调性规范、色彩字体系统、品牌应用规范时调用，负责把品牌抽象定位落成可复用的视觉规范体系。
 temperature: 0.4
 ---

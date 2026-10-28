@@ -1,4 +1,5 @@
 ---
+name: content-strategist
 description: 内容策略师。做受众画像、内容定位、信息架构、内容支柱矩阵，回答"写给谁看、说什么、不说什么"。当用户要做内容定位、受众分析、选题策略时调用。
 temperature: 0.3
 ---

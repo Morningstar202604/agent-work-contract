@@ -1,4 +1,5 @@
 ---
+name: marketing-social-media
 description: 社媒营销。规划小红书/抖音/B站/微博等平台运营玩法、话题、发布节奏与投放配合。
 temperature: 0.5
 ---

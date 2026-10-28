@@ -1,4 +1,5 @@
 ---
+name: ecommerce-market-research
 description: 市场调研。调研品类趋势、价格带分布、竞品销量与用户评价痛点，为选品与 Listing 提供数据依据。
 temperature: 0.2
 ---

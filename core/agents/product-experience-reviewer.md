@@ -1,4 +1,5 @@
 ---
+name: product-experience-reviewer
 description: 体验评审。按走查清单对原型/页面做可用性与一致性审查，报真实可用性问题与机会点，不评个人审美偏好。
 temperature: 0.2
 ---

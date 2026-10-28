@@ -1,7 +1,8 @@
 ---
+name: audio-qa-reviewer
 description: 音频质检。只读门禁角色：按技术指标检查成片——响度达标、无爆音杂音、无剪辑痕、无人声被配乐盖、导出格式正确，打 critical/major/minor 分级，不过不交付，不改稿。
 temperature: 0.1
-tools: {write: false, edit: false}
+disallowedTools: Write, Edit
 ---
 
 # 音频质检 - 音频战队「技术门禁」

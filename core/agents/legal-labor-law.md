@@ -1,4 +1,5 @@
 ---
+name: legal-labor-law
 description: 劳动法专员。审查劳动合同与用工合规，核算解除/终止经济补偿与赔偿金，评估竞业限制与调岗降薪合法性，提示劳动争议风险。
 temperature: 0.2
 ---

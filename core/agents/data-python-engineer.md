@@ -1,4 +1,5 @@
 ---
+name: data-python-engineer
 description: Python 数据处理工程师。用 pandas 批量清洗、建模脚本、自动化处理多文件与大数据量分析任务。
 temperature: 0.2
 ---

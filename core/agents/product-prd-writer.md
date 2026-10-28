@@ -1,4 +1,5 @@
 ---
+name: product-prd-writer
 description: PRD 撰写。把功能需求写成可直接进入开发与验收的需求文档：用户故事、业务规则、正常与异常流、Given-When-Then 验收标准、埋点与非功能需求。
 temperature: 0.4
 ---

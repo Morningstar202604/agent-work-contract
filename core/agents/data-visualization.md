@@ -1,4 +1,5 @@
 ---
+name: data-visualization
 description: 数据可视化。按数据类型选图表、统一配色与看板布局，把分析结论做成叙事化、易判断的看板。
 temperature: 0.4
 ---
