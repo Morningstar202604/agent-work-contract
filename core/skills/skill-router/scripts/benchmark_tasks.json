@@ -1,0 +1,93 @@
+{
+  "note": "skill-router 基准：task=任务原文，expect=可接受的目标技能（top3 命中任一即算对），none=true 表示应当判定 NO SKILL | 2026-10-25: dropped 24 cases whose expected skills are not installed (archived/never installed); kept only resolvable cases + all none-cases.",
+  "cases": [
+    {
+      "task": "帮我审一个 PR，重点是安全问题",
+      "expect": [
+        "code-review-and-quality",
+        "open-code-review",
+        "code-reviewer",
+        "ship-gate",
+        "caveman-review"
+      ]
+    },
+    {
+      "task": "优化这个 Dockerfile，镜像太大",
+      "expect": [
+        "docker-development"
+      ]
+    },
+    {
+      "task": "这条 SQL 查询很慢，帮我优化",
+      "expect": [
+        "sql-database-assistant",
+        "sql-optimization-patterns"
+      ]
+    },
+    {
+      "task": "设计 PostgreSQL 的表结构",
+      "expect": [
+        "postgresql-table-design"
+      ]
+    },
+    {
+      "task": "管理我的 .env 密钥防止泄露",
+      "expect": [
+        "env-secrets-manager",
+        "secrets-vault-manager"
+      ]
+    },
+    {
+      "task": "给客户工单分类分级",
+      "expect": [
+        "ticket-triage"
+      ]
+    },
+    {
+      "task": "给系统画一张架构图",
+      "expect": [
+        "arch-diagram",
+        "archify",
+        "diagram-builder-pro",
+        "diagram-design",
+        "senior-architect"
+      ]
+    },
+    {
+      "task": "爬取这个网站的数据",
+      "expect": [
+        "web-data-extractor"
+      ]
+    },
+    {
+      "task": "谢谢",
+      "expect": [],
+      "none": true
+    },
+    {
+      "task": "1+1 等于几",
+      "expect": [],
+      "none": true
+    },
+    {
+      "task": "继续",
+      "expect": [],
+      "none": true
+    },
+    {
+      "task": "你好呀",
+      "expect": [],
+      "none": true
+    },
+    {
+      "task": "今天星期几",
+      "expect": [],
+      "none": true
+    },
+    {
+      "task": "嗯嗯好的就这么办",
+      "expect": [],
+      "none": true
+    }
+  ]
+}
