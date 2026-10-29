@@ -1,6 +1,6 @@
 ---
 name: spec-driven-workflow
-description: Use when the user asks to write a spec before code, write specifications, define acceptance criteria, do spec-driven development, plan features before implementation, generate tests from specifications, or follow spec-first development practices.
+description: Use when the user asks to write a spec before code, define acceptance criteria, do spec-driven development, plan features before implementation, or generate tests from specifications.
 
 license: Apache-2.0
 compatibility: Requires network access. No API keys required.

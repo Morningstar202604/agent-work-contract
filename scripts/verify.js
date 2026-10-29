@@ -33,9 +33,9 @@ const skills = fs.readdirSync(path.join(REPO, 'core', 'skills')).filter((d) =>
   fs.existsSync(path.join(REPO, 'core', 'skills', d, 'SKILL.md'))
 );
 
-check('技能数量 = 82', () => {
-  if (skills.length !== 82) throw new Error('实际 ' + skills.length);
-  return '82';
+check('技能数量 = 96', () => {
+  if (skills.length !== 96) throw new Error('实际 ' + skills.length);
+  return '96';
 });
 
 check('每个技能都有 SKILL.md 与 name 字段', () => {

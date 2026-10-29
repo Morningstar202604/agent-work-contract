@@ -53,6 +53,7 @@ const SKIP_SKILL_NAMES = new Set([
   'skill-creator',
   'visualize',
   'plugin-creator',
+  'template',
 ]);
 
 const args = process.argv.slice(2);
