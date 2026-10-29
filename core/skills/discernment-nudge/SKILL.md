@@ -1,6 +1,6 @@
 ---
 name: discernment-nudge
-description: >
+description: After a substantive answer or draft the user may act on (advice, plans, proposals, estimates, analysis, factual claims), invoke BEFORE finalizing to surface what could be wrong or missing and what to verify first.
   After you give a substantive answer or draft that the user may act on
   — advice or recommendations, drafted artifacts such as goals, plans,
   pitches, proposals, or emails, estimates or projections, analysis or
