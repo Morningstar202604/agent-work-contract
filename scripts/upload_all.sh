@@ -29,10 +29,16 @@ FAILED=0
 while IFS=$'\t' read -r platform owner url; do
   [ -n "$platform" ] || continue
   echo "== push $platform/$owner =="
-  if ! git -C "$REPO_DIR" push "$url" "HEAD:refs/heads/$BRANCH" 2>&1 | sed -E 's#https://[^@]*@#https://***@#g'; then
-    echo "!! push 失败：$platform/$owner" >&2
-    FAILED=$((FAILED+1))
-  fi
+  ok=0
+  for attempt in 1 2 3; do
+    if git -C "$REPO_DIR" push "$url" "HEAD:refs/heads/$BRANCH" 2>&1 | sed -E 's#https://[^@]*@#https://***@#g'; then
+      ok=1
+      break
+    fi
+    echo "!! 第 $attempt 次推送失败：$platform/$owner，退避后重试" >&2
+    sleep $((attempt * 20))
+  done
+  [ $ok = 1 ] || { echo "!! push 失败：$platform/$owner" >&2; FAILED=$((FAILED+1)); }
   sleep "$SLEEP"
 done <<< "$TARGETS"
 

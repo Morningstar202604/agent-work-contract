@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.2.0 — 2026-10-29
+
+### 新增
+
+- **凭据库 CLI `scripts/accounts_cli.py`**：`list / check / sync / store-git / env / path`，安装时自动部署到 `~/.agent-secrets/`；纪律同 docs/SECRETS.md——token 不打印、不提交。
+- **五平台上传脚本 `scripts/upload_all.sh`**：gitcode/badhope、gitee/badhope、github/x33834、github/Morningstar202604、github/badhope 串行推送，平台间隔限速（默认 8s，`UPLOAD_SLEEP` 可调），单平台失败自动退避重试 3 次；token 只从凭据库读入内存拼推送 URL，不写 `.git/config`。
+- **14 个精选技能入库**：`algorithmic-art`、`canvas-design`、`code-review`、`debugging`、`discernment-nudge`、`doc-coauthoring`、`docker`、`git-workflow`、`internal-comms`、`mcp-builder`、`testing`、`theme-factory`、`web-artifacts-builder`、`webapp-testing`。core/skills 82→96，仓库成为已装技能的唯一源。
+
+### 修改
+
+- `install.js`：`SKIP_SKILL_NAMES` 增加 `template`（占位模板不入安装）；安装时部署凭据库 CLI 到凭据库目录（清单记录相对路径）。
+- 13 条技能 description 改写至 ≤250 字符（ZCode 单条硬截断阈值）；5 个 SKILL.md 清除 UTF-8 BOM。
+- `scripts/verify.js`：技能数校验 82→96。
+- README / REUSE-PROMPT / PORTABILITY 的安装地址统一为 `gitcode.com/badhope/rules`（仓库五平台统一命名 `rules`）。
+
 ## 1.1.0 — 2026-10-29
 
 ### 新增
